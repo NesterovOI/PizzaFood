@@ -21,11 +21,7 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>() {
     override fun onBindViewHolder(holder: ViewHolderCartList, position: Int) {
        // val itemClickMenu = foodList[position]
         holder.bind(foodList[position])
-//        holder.image.setImageResource(itemClickMenu.image)
-//        holder.title.setText(itemClickMenu.title)
-//        holder.number.setText(itemClickMenu.number)
-//        holder.money.setText(itemClickMenu.money.toString())
-//        holder.totalMoney.setText(itemClickMenu.totalMoney.toString())
+
         holder.plusCartBtn.setOnClickListener{
             val many = holder.money.text.toString().toDouble()
             var number = holder.number.toString().toInt()
@@ -34,6 +30,7 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>() {
             holder.number.text = number.toString()
             holder.totalMoney.text = sum.toString()
         }
+
         holder.minusCartBtn.setOnClickListener{
             val many = holder.money.text.toString().toDouble()
             var number = holder.number.toString().toInt()
