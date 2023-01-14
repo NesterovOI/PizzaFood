@@ -1,0 +1,522 @@
+<resources>
+    <string name="app_name">Pizza</string>
+    <string name="name_pizza">Точка</string>
+    <string name="registration">Зареєструйтеся</string>
+    <string name="hint_phone">Ведіть номер телефона</string>
+    <string name="start_button">Війти</string>
+    <string name="id_account">Назва акаунта</string>
+    <string name="find_food">Пошук по назві страви</string>
+    <string name="quick_delivery">Швидка доставка</string>
+    <string name="categories">Категорії:</string>
+    <string name="populars">Популярні:</string>
+    <string name="home">Головна</string>
+    <string name="profile">Профіль</string>
+    <string name="support">Підтримка</string>
+    <string name="settings">Налаштунок</string>
+    <string name="cat1">Піца</string>
+    <string name="cat2">Роли</string>
+    <string name="cat3">Сети</string>
+    <string name="cat4">Салат</string>
+    <string name="cat5">Суп</string>
+    <string name="cat6">Соус</string>
+    <string name="cat7">Десерт</string>
+    <string name="cat8">Напій</string>
+    <string name="add">Додати</string>
+    <string name="description">Опис</string>
+    <string name="add_cart_btn">Додати в кошик</string>
+    <string name="my_cart">Кошик продуктів</string>
+    <string name="items_total">Всього продуктів:</string>
+    <string name="delivery_services">Послуги доставки:</string>
+    <string name="tax">Таксі:</string>
+    <string name="all">Всього:</string>
+    <string name="check_out">Здійснити замовлення</string>
+    <string name="empty">Ваш кошик пустий</string>
+    <string name="many">грн.</string>
+    <string name="all_many">Всього грн.</string>
+
+    <string name="salad1_title"><b>Курячі стріпси — 140 г</b></string>
+    <string name="salad1_description"><b>Склад:</b> Філе куряче, Сіль, Перець, Борошно, Яйце, Панко,
+        Соус медово-гірчичний</string>
+
+    <string name="salad2_title"><b>Моцарелла фрі — 150 г</b></string>
+    <string name="salad2_description"><b>Склад:</b> Сир моцарелла, Панко, Яйце, Соус смородиновий</string>
+
+    <string name="salad3_title"><b>Рис з креветкою — 300 г</b></string>
+    <string name="salad3_description"><b>Склад:</b> Рис паровий, Креветка тигрова, Яйце, Кунжут,
+        Хондаші, Кунжутне масло,
+        Соєвий соус, Цибуля зелена</string>
+
+    <string name="salad4_title"><b>Рис з куркою — 300 г</b></string>
+    <string name="salad4_description"><b>Склад:</b> Рис паровий, Філе куряче, Яйце, Кунжут, Хондаші,
+        Кунжутне масло,
+        Соєвий соус, Цибуля зелена</string>
+
+    <string name="salad5_title"><b>Рисова локшина з куркою — 260 г</b></string>
+    <string name="salad5_description"><b>Склад:</b> Локшина рисова, Філе куряче, Перець болгарський,
+        Цибуля ріпчаста, Морква
+        Цибуля зелена, Соус Устричний</string>
+
+    <string name="salad6_title"><b>Рисова локшина з море продуктами — 300 г</b></string>
+    <string name="salad6_description"><b>Склад:</b> Рисова локшина, Брокколі, Морква, Спаржа,
+        Креветка кокт, Мідії, Кальмар,
+        Цибуля зелена, Шрірача, Соус для локшини</string>
+
+    <string name="salad7_title"><b>Рисова локшина з овочами — 250 г</b></string>
+    <string name="salad7_description"><b>Склад:</b> Рисова локшина, Перець болшарський, Цибуля
+        рібчаста, Морква,
+        Цибуля зелена, Соус Устрічний, Брокколі</string>
+
+    <string name="salad8_title"><b>Рисова локшина з телятиною — 260 г</b></string>
+    <string name="salad8_description"><b>Склад:</b> Рисова локшина, Телятина, Перець болшарський,
+        Цибуля рібчаста, Морква,
+        Цибуля зелена, Соус Азіатський</string>
+
+    <string name="salad9_title"><b>Рисова чіпси — 50 г</b></string>
+
+    <string name="salad10_title"><b>Салат з креветкою — 130 г</b></string>
+    <string name="salad10_description"><b>Склад:</b> Мікс салату, Соус шоу мірін, Конжут чорний,
+        Креветка темпура</string>
+
+    <string name="salad11_title"><b>Салат тайський — 170 г</b></string>
+    <string name="salad11_description"><b>Склад:</b> Мікс салату, Помідор, Куряча стріпла, Соус
+        медово-гірчичний</string>
+
+    <string name="salad12_title"><b>Салат хіяші — 110 г</b></string>
+    <string name="salad12_description"><b>Склад:</b> Хіяші, Кунжут, Соус горіховий</string>
+
+    <string name="salad13_title"><b>Удон з куркою — 270 г</b></string>
+    <string name="salad13_description"><b>Склад:</b> Удон, Філе куряче, Перець болгарський, Цибуля
+        ріпчаста, Морква,
+    Брокколі, Соус устрічний</string>
+
+    <string name="salad14_title"><b>Удон з морепродуктами — 300 г</b></string>
+    <string name="salad14_description"><b>Склад:</b> Удон, Спаржа, Креветка, Мідії, Кальмар, Цибуля
+        зелена, Морква,
+    Брокколі, Соус устрічний, Соус Азіатський</string>
+
+    <string name="salad15_title"><b>Удон з овочами — 250 г</b></string>
+    <string name="salad15_description"><b>Склад:</b> Удон, Перець болгарський, Цибуля ріпчаста,
+        Морква, Цибуля зелена,
+    Брокколі, Соус устрічний</string>
+
+    <string name="salad16_title"><b>Удон з телятиною — 270 г</b></string>
+    <string name="salad16_description"><b>Склад:</b> Удон, Телятина, Перець болгарський, Цибуля
+        ріпчаста, Морква,
+    Брокколі, Соус Азіатський</string>
+
+    <string name="dessert1_title"><b>Моті банан шоколад</b></string>
+    <string name="dessert1_description">Японський десерт Банан в шоколаді</string>
+
+    <string name="dessert2_title"><b>Моті гранат з медом — 42 г</b></string>
+    <string name="dessert2_description">Японський десерт гранат з медом</string>
+
+    <string name="dessert3_title"><b>Моті маракуя — 42 г</b></string>
+    <string name="dessert3_description">Японський десерт Маракуйя</string>
+
+    <string name="addition1_title"><b>Авокадо доповнення — 25 г</b></string>
+    <string name="addition1_description"><b>Склад:</b> Авокадо — 25 г</string>
+
+    <string name="addition2_title"><b>Васабі — 5 г</b></string>
+
+    <string name="addition3_title"><b>Імбір — 7 г</b></string>
+
+    <string name="addition4_title"><b>Сир філадельфія доповнення — 20 г</b></string>
+    <string name="addition4_description"><b>Склад:</b> Сир філадельфія — 20 г</string>
+
+    <string name="addition5_title"><b>Соєвий соус доповнення — 40 г</b></string>
+    <string name="addition5_description"><b>Склад:</b> Соєвий соус — 40 г</string>
+
+    <string name="addition6_title"><b>Соус горіховий доповнення — 30 г</b></string>
+    <string name="addition6_description"><b>Склад:</b> Соус горіховий — 30 г</string>
+
+    <string name="addition7_title"><b>Соус унагі доповнення — 20 г</b></string>
+    <string name="addition7_description"><b>Склад:</b> Соус унагі — 20 г</string>
+
+    <string name="baked_rolls1_title"><b>Ніжний з вугрем — 255 г 8 шт</b></string>
+    <string name="baked_rolls1_description"><b>Склад:</b> Рис, Норі, Сир філадельфія, Сирний заміс,
+        Айсберг, Унагі</string>
+
+    <string name="baked_rolls2_title"><b>Ніжний з крабом — 255 г 8 шт</b></string>
+    <string name="baked_rolls2_description"><b>Склад:</b> Рис, Норі, Сир філадельфія, Крабовий мікс,
+        Айсберг, Унагі</string>
+
+    <string name="baked_rolls3_title"><b>Ніжний з куркою — 265 г 8 шт</b></string>
+    <string name="baked_rolls3_description"><b>Склад:</b> Рис, Норі, Сир філадельфія, Куряче філе
+        смажене, Айсберг, Унагі</string>
+
+    <string name="baked_rolls4_title"><b>Ніжний з лососем — 255 г 8 шт</b></string>
+    <string name="baked_rolls4_description"><b>Склад:</b> Рис, Норі, Сир філадельфія, Лосось, Айсберг,
+        Унагі</string>
+
+    <string name="baked_rolls5_title"><b>Ніжний з сиром — 235 г 8 шт</b></string>
+    <string name="baked_rolls5_description"><b>Склад:</b> Рис, Норі, Сир філадельфія, Сирний заміс,
+        Айсберг, Унагі</string>
+
+    <string name="baked_rolls6_title"><b>Окінава — 255 г 8 шт</b></string>
+    <string name="baked_rolls6_description"><b>Склад:</b> Рис, Норі, Сир філадельфія, Масаго, Лосось,
+        Огірок, Сирний заміс</string>
+
+    <string name="baked_rolls7_title"><b>Фуджі — 220 г 8 шт</b></string>
+    <string name="baked_rolls7_description"><b>Склад:</b> Рис, Норі, Сир філадельфія, Вугор, Сирний
+        заміс</string>
+
+    <string name="drinks1_title"><b>Бонаква</b></string>
+    <string name="drinks1_description"><b>Склад:</b> Без газу</string>
+
+    <string name="drinks2_title"><b>Бонаква газована</b></string>
+    <string name="drinks2_description"><b>Склад:</b> Без газована</string>
+
+    <string name="drinks3_title"><b>Кола 0,5</b></string>
+    <string name="drinks4_title"><b>Лимонад імбірний</b></string>
+    <string name="drinks5_title"><b>Морс ягідний</b></string>
+
+    <string name="pizza1_title"><b>Піца 4 м\'яса — 450 г</b></string>
+    <string name="pizza1_description"><b>Склад:</b> Соус томатний, Сир моцарела, Пепероні, Ветчина,
+        Охотнічі ковбаски,
+    Куряча грудка, Помідори черрі /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza2_title"><b>Піца 4 сезони — 470 г</b></string>
+    <string name="pizza2_description"><b>Склад:</b> Соус томатний, Моцарелла терта, Цибуля червона,
+        Куряча грудка,
+        Гриби, Пепероні, Мисливські ковбаски, Шинка, Кукурудза /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza3_title"><b>Піца 4 сира — 440 г</b></string>
+    <string name="pizza3_description"><b>Склад:</b> Моцарелла, Сир Дор Блю, Сир Чердер слайс, Сир
+        Фета, Вершковий соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza4_title"><b>Піца Асорті — 500 г</b></string>
+    <string name="pizza4_description"><b>Склад:</b>Шинка, Сир моцарелла, Мисливські ковбаски,
+        Печериці, Томати, Кукурудза, Томатний соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza5_title"><b>Піца Гавайська — 480 г</b></string>
+    <string name="pizza5_description"><b>Склад:</b> Моцарела, Копчена курка, Ананас, Вершковий соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza6_title"><b>Піца дитяча — 470 г</b></string>
+    <string name="pizza6_description"><b>Склад:</b> Моцарела, Копчена курка, Томатний соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza7_title"><b>Піца з куркою та грибами — 450 г</b></string>
+    <string name="pizza7_description"><b>Склад:</b> Куряча грудка, Сир моцарела, Червона цибуля,
+        Печериці, Вершковий соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza8_title"><b>Піца курка та сир — 420 г</b></string>
+    <string name="pizza8_description"><b>Склад:</b> Сир моцарела, Куряча грудка, Вершковий соус,
+        кукурудза, Сир Чеддр слайс /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza9_title"><b>Піца куряча — 410 г</b></string>
+    <string name="pizza9_description"><b>Склад:</b> Моцарела, куряче філе, Червона цибуля, Крем сир /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza10_title"><b>Піца маргарита — 350 г</b></string>
+    <string name="pizza10_description"><b>Склад:</b> Моцарела, Італійські трави, Томатний соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza11_title"><b>Піца мисливська — 450 г</b></string>
+    <string name="pizza11_description"><b>Склад:</b> Мисливські ковбаски, Сир моцарела, Томати,
+        Цибуля червона, Томатний соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza12_title"><b>Піца пепероні — 450 г</b></string>
+    <string name="pizza12_description"><b>Склад:</b> Пепероні, Сир моцарела, Італійські трави,
+        Томатний соус /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="pizza13_title"><b>Піца шинка пепероні — 450 г</b></string>
+    <string name="pizza13_description"><b>Склад:</b> Пепероні, Шинка, Сир моцарела, Печериці,
+        Цибуля маринована, Соус томатний /n
+        <b>Основа:</b> Крафтове борошно, Пшеничне борошно, Закваска, Оливкова олія, Цукор, Сіль, Вода
+    </string>
+
+    <string name="roles1_title"><b>Авокадо ролл — 210 г 8 шт</b></string>
+    <string name="roles1_description"><b>Склад:</b> Рис, Норі, Хіяші, Айсберг, Авокадо, Унагі, Кунжут
+    </string>
+
+    <string name="roles2_title"><b>Боніто з вугрем — 190 г 8 шт</b></string>
+    <string name="roles2_description"><b>Склад:</b> Рис, Норі, Хіяші, Філадельфія, Вугор, Огірок, Боніто
+    </string>
+
+    <string name="roles3_title"><b>Боніто з лососем — 190 г 8 шт</b></string>
+    <string name="roles3_description"><b>Склад:</b> Рис, Норі, Філадельфія, Лосось, Огірок, Боніто
+    </string>
+
+    <string name="roles4_title"><b>Калафорнія з вугрем в ікрі — 200 г 8 шт</b></string>
+    <string name="roles4_description"><b>Склад:</b> Рис, Норі, Вугор, Авокадо, Огірок, Масаго, Унагі
+    </string>
+
+    <string name="roles5_title"><b>Калафорнія з вугрем в кунжуті — 195 г 8 шт</b></string>
+    <string name="roles5_description"><b>Склад:</b> Рис, Норі, Вугор, Авокадо, Огірок, Кунжут, Унагі
+    </string>
+
+    <string name="roles6_title"><b>Калафорнія з крабом в ікрі — 195 г 8 шт</b></string>
+    <string name="roles6_description"><b>Склад:</b> Рис, Норі, Крабовий мікс, Авокадо, Огірок, Масаго
+    </string>
+
+    <string name="roles7_title"><b>Калафорнія з крабом в кунжуті — 190 г 8 шт</b></string>
+    <string name="roles7_description"><b>Склад:</b> Рис, Норі, Крабовий мікс, Авокадо, Огірок, Кунжут
+    </string>
+
+    <string name="roles_title">Каліфорнія — 8 шт</string>
+
+    <string name="roles8_title"><b>Калафорнія з лососем в ікрі — 195 г 8 шт</b></string>
+    <string name="roles8_description"><b>Склад:</b> Рис, Норі, Лосось, Авокадо, Огірок, Масаго
+    </string>
+
+    <string name="roles9_title"><b>Калафорнія з лососем в кунжуті — 190 г 8 шт</b></string>
+    <string name="roles9_description"><b>Склад:</b> Рис, Норі, Лосось, Авокадо, Огірок, Кунжут
+    </string>
+
+    <string name="roles10_title"><b>Калафорнія з лососем в кунжуті — 190 г 8 шт</b></string>
+    <string name="roles10_description"><b>Склад:</b> Рис, Норі, Лосось, Авокадо, Огірок, Кунжут
+    </string>
+
+    <string name="roles11_title"><b>Калафорнія з тунцем в кунжуті — 190 г 8 шт</b></string>
+    <string name="roles11_description"><b>Склад:</b> Рис, Норі, Тунець, Авокадо, Огірок, Кунжут
+    </string>
+
+    <string name="roles12_title"><b>Калафорнія Хіяші — 195 г 8 шт</b></string>
+    <string name="roles12_description"><b>Склад:</b> Рис, Норі, Хіяші, Авокадо, Огірок, Кунжут, Соус
+        горіховий
+    </string>
+
+    <string name="roles13_title"><b>Креветка мікс — 195 г 8 шт</b></string>
+    <string name="roles13_description"><b>Склад:</b> Рис, Норі, Креветка, Помідор, Цибуля зелена,
+        Айсберг, Соус які
+    </string>
+
+    <string name="roles14_title"><b>Макі вугор — 100 г 8 шт</b></string>
+    <string name="roles14_description"><b>Склад:</b> Рис, Норі, Вугор, Унагі, Кунжут
+    </string>
+
+    <string name="roles15_title"><b>Макі краб — 100 г 8 шт</b></string>
+    <string name="roles15_description"><b>Склад:</b> Рис, Норі, Крабовий мікс
+    </string>
+
+    <string name="roles16_title"><b>Макі креветка — 100 г 8 шт</b></string>
+    <string name="roles16_description"><b>Склад:</b> Рис, Норі, Креветка
+    </string>
+
+    <string name="roles17_title"><b>Макі лосось — 100 г 8 шт</b></string>
+    <string name="roles17_description"><b>Склад:</b> Рис, Норі, Лосось
+    </string>
+
+    <string name="roles18_title"><b>Макі огірок — 100 г 8 шт</b></string>
+    <string name="roles18_description"><b>Склад:</b> Рис, Норі, Огірок
+    </string>
+
+    <string name="roles19_title"><b>Макі тунець — 100 г 8 шт</b></string>
+    <string name="roles19_description"><b>Склад:</b> Рис, Норі, Тунець
+    </string>
+
+    <string name="roles20_title"><b>Фелікс рол — 180 г 6 шт</b></string>
+    <string name="roles20_description"><b>Склад:</b> Рис, Норі, Айсберг, Заміс фелікс, Кунжут чорний
+    </string>
+
+    <string name="roles21_title"><b>Філадельфія Гурман — 260 г 8 шт</b></string>
+    <string name="roles21_description"><b>Склад:</b> Рис, Норі, Філадельфія, Масаго, Вугор, Лосось
+    </string>
+
+    <string name="roles22_title"><b>Філадельфія де люкс — 215 г 8 шт</b></string>
+    <string name="roles22_description"><b>Склад:</b> Рис, Норі, Філадельфія, Авокадо, Огірок, Лосось,
+        Соус які
+    </string>
+
+    <string name="roles23_title"><b>Філадельфія з вугрем — 205 г 8 шт</b></string>
+    <string name="roles23_description"><b>Склад:</b> Рис, Норі, Філадельфія, Вугор, Авокадо, Унагі,
+        Кунжут
+    </string>
+
+    <string name="networks1_title"><b>Сет мій смачний — 1235 г</b></string>
+    <string name="networks1_description">Каліфорнія з лососем в кунжуті (1), Кацибуші (1),
+        Футумакі з смаженим лососем (1), Каліфорнія з смаженим лососем (1), Філадельфія з лососсем в кунжуті (1),
+        Ніжний з куркою (1)
+    </string>
+
+    <string name="networks2_title"><b>Сет моя осіння казка — 1020 г</b></string>
+    <string name="networks2_description">Каліфорнія з смаженим лососем, Ніжний з сиром,
+        Чіз рол, ніжний з куркою, Філадельфія з лососем в кунжуті
+    </string>
+
+    <string name="networks3_title"><b>Сет Свято наближається — 1015 г</b></string>
+    <string name="networks3_description">Філадельфія лайт, Каліфорнія з крабом в кунжуті,
+        Ніжний з сиром, Чіз, Лава
+    </string>
+
+    <string name="networks4_title"><b>Сет Сімейний — 2000 г</b></string>
+    <string name="networks4_description">Філадельфія лайт, Лава, Каліфорнія темпура, Каліфорнія зі
+        смаженим лососем, Каліфорнія хіяші, Каліфорнія з крабом в кунжуті, Ніжний з сиром, Ніжний зі
+        смаженим лососем, Кацибуші, Філа крабова паличка
+    </string>
+
+    <string name="networks5_title"><b>Сет Добрий вечір — 1005 г</b></string>
+    <string name="networks5_description">Ніжний з сиром, Боніто з лососем, Філадельфія лайт, Кацібуші,
+        Футомакі з крабом
+    </string>
+
+    <string name="networks6_title"><b>Сет Мій Кривбас — 970 г</b></string>
+    <string name="networks6_description">Фила лайт, Чіз, Футомакі з крабом, Ніжний з сиром, калифа хіяші
+    </string>
+
+    <string name="networks7_title"><b>Сет Панночка — 1010 г</b></string>
+    <string name="networks7_description">Ніжний зі смаженим лососем, Філадельфія лайт, Каліфорнія з хіяші,
+        Каліфорнія зі смаженим лососем, Футомакі зі смаженим лососем
+    </string>
+
+    <string name="networks8_title"><b>Сет Різдвяний — 1010 г</b></string>
+    <string name="networks8_description">Філадельфія лайт, Чіз, Філадельфія крабова паличка, Чікен спайсі,
+        Ніжний з сиром, Ніжний з крабом
+    </string>
+
+    <string name="networks9_title"><b>Сет Шалена пятница/я — 1180 г</b></string>
+    <string name="networks9_description">Філадельфія лайт, Ніжний з сиром, Боніто з лососем, Філа делюкс,
+        Каліфорнія краб кунжут, Лава
+    </string>
+
+    <string name="networks10_title"><b>Біг сет — 1925 г</b></string>
+    <string name="networks10_description">Ніжний з куркою, Ніжний з сиром, Каліфорнія з хіяші, Філадельфія лайт,
+    Темпура рол, Каліфорнія темпура, Чікен спайсі, Каліфорнія зі смаженим лососем, Лава, Макі з огірком
+    </string>
+
+    <string name="networks11_title"><b>Сет Бінго — 805 г</b></string>
+    <string name="networks11_description">Філадельфія лайт, Фелікс ролл, Кранч з креветкою, Ніжний з сиром
+    </string>
+
+    <string name="networks12_title"><b>Сет Гаряча штучка — 1200 г</b></string>
+    <string name="networks12_description">Ніжний з сиром, Філадельфія лайт, Футомакі зі смаженим лососем,
+        Каліфорнія з хіяші, Кацибуші зі смаженим лососем
+    </string>
+
+    <string name="networks13_title"><b>Сет Джумаджі — 1095 г</b></string>
+    <string name="networks13_description">Філадельфія лайт, Футумакі з лососем, Філадельфія унагі,
+        Ніжний з крабом, Ніжний з сиром
+    </string>
+
+    <string name="networks14_title"><b>Сет Мій байрактар — 885 г</b></string>
+    <string name="networks14_description">Ніжний з куркою, Ніжний з сиром, Каліфорнія темпура,
+        рол Темпура зі смаженим лососем
+    </string>
+
+    <string name="networks15_title"><b>Сет Мій Біг Бен — 2000 г</b></string>
+    <string name="networks15_description">Філадельфія лайт, Дракон з лососем, Футумакі з крабом, Лава,
+        Каліфорнія з крабом в кунжуті, Каліфорнія хіяші, Ніжний з сиром, Ніжний з куркою, Чіз, Каліфорнія темпура
+    </string>
+
+    <string name="networks16_title"><b>Сет Мій вечір — 1290 г</b></string>
+    <string name="networks16_description">Філадельфія лайт, Ніжний з сиром, Чіз, Ніжний з куркою,
+        Каліфорнія темпура, Каліфорнія з крабом в кунжуті, Футумакі з смаженим лососем
+    </string>
+
+    <string name="networks17_title"><b>Сет Мій ввідпочинок — 830 г</b></string>
+    <string name="networks17_description">Філадельфія де люкс, Філадельфія лайт, Філадельфія найт,
+        Філадельфія в угрі, Футумакі з лососем, Філадельфія класика
+    </string>
+
+    <string name="networks18_title"><b>Сет Мій Джет — 1160 г</b></string>
+    <string name="networks18_description">Ніжний з крабом, Ніжний з лососем, Футумакі з лососем,
+        Філадельфія лайт, Філадельфія тобіко
+    </string>
+
+    <string name="networks19_title"><b>Сет Мій Каприз — 695 г</b></string>
+    <string name="networks19_description">Філадельфія лайт, Каліфорнія з лососем в ікрі, Філадельфія
+        унагі, Макі огірок
+    </string>
+
+    <string name="networks20_title"><b>Сет Мій Рокн Рол — 810 г</b></string>
+    <string name="networks20_description">Філадельфія класика, Каліфорнія з крабом в кунжуті, Філадельфія
+        тобіко, Фелікс ролл
+    </string>
+
+    <string name="networks21_title"><b>Сет Мій фаворит — 1990 г</b></string>
+    <string name="networks21_description">Філаделікс рол, Філадельфія в угрі, Макі з креветкою, Кранч з
+        креветкою, Філадельфія лайт, Футомакі з лососем, Темпура ролл, каліфорнія темпура, Ніжний з
+        куркою, Ніжний з лососем
+    </string>
+
+    <string name="networks22_title"><b>Сет Мій хіт — 885 г</b></string>
+    <string name="networks22_description">Філадельфія найт, Кранч з креветкою, Каліфорнія з лососем в
+        кунжуті, Філадельфія лайт, Макі лосось
+    </string>
+
+    <string name="networks23_title"><b>Сет Мій яскравий — 1055 г</b></string>
+    <string name="networks23_description">Ніжний з куркою, Нініку темпура, Чіз рол, Кацибуші, Каліфорнія
+        з крабом в кунжуті
+    </string>
+
+    <string name="networks24_title"><b>Сет Моє бажання — 1065 г</b></string>
+    <string name="networks24_description">Каліфорнія з крабом в кунжуті, Футумакі з креветкою, Рол Лайт,
+        Ніжний з куркою, Ніжний з сиром
+    </string>
+
+    <string name="fried_rolls1_title"><b>Каліфорнія темпура — 220 г 8 шт</b></string>
+    <string name="fried_rolls1_description">Рис, Норі, Крабовий мікс, Авокадо, Огірок, Панко, Кляр
+    </string>
+
+    <string name="fried_rolls2_title"><b>Нініку темпура — 200 г 8 шт</b></string>
+    <string name="fried_rolls2_description">Рис, Норі, Філадельфія, Тунець, Панко, Кляр
+    </string>
+
+    <string name="fried_rolls3_title"><b>Оушен темпура — 215 г 8 шт</b></string>
+    <string name="fried_rolls3_description">Рис, Норі, Крабмікс, Айсберг, Огірок, Панко, Кляр
+    </string>
+
+    <string name="fried_rolls4_title"><b>Темпура з куркою</b></string>
+    <string name="fried_rolls4_description">Рис, Норі, Філадельфія, Чедрр, Курка смажена, Панко, Кляр
+    </string>
+
+    <string name="fried_rolls5_title"><b>Унагі темпура — 220 г 8 шт</b></string>
+    <string name="fried_rolls5_description">Рис, Норі, Філадельфія, Вугор, Масаго, Огірок, Панко, Кляр, Унагі
+    </string>
+
+    <string name="soups1_title"><b>Місо вершковий з лососем — 240 г</b></string>
+    <string name="soups1_description">Бульйон місо, Сир вершковий, Кунжут, Гриби шийтаке, Локшина рисова,
+        Цибуля зелена, Вакаме, Лосось
+    </string>
+
+    <string name="soups2_title"><b>Місо суп — 190 г</b></string>
+    <string name="soups2_description">Бульйон місо, Вакаме, Цибуля зелена, Кунжут, Сир тофу
+    </string>
+
+    <string name="soups3_title"><b>Рамен з куркою — 475 г</b></string>
+    <string name="soups3_description">Локшина удон, Яйце варене, Курка маринована жарена, Гриби Шийтаке, Перець чілі,
+        Кунжут, Бульйон курячий, Цибуля зелена, Норі
+    </string>
+
+    <string name="soups4_title"><b>Рамен з телятиною — 475 г</b></string>
+    <string name="soups4_description">Локшина удон, Яйце варене, Телятина маринована жарена, Гриби Шийтаке, Перець чілі,
+        Кунжут, Бульйон телячий, Цибуля зелена, Норі
+    </string>
+
+    <string name="soups5_title"><b>Суп з морепродуктами — 250 г</b></string>
+    <string name="soups5_description">Бульйон на суп з морепродуктів, Удон, Креветка коктельна, Кальмар,
+        Лосось, Вакаме, Гриби шийтаке, Цибуля зелена
+    </string>
+
+    <string name="soups6_title"><b>Суп суімоно — 280 г</b></string>
+    <string name="soups6_description">Бульйон клер, Рисова локшина, Курка жарена, Крабова паличка, Яйце варене,
+        Цибуля зелена, Гриби шийтаке, Вакаме
+    </string>
+
+    <string name="soups7_title"><b>Том ям — 400 г</b></string>
+    <string name="soups7_description">Криветка тигрова, Кальмар, Гриби шийтаке, Молоко кокосове, Паста том ям,
+        Імбір-цедра лимона, Сіль, Вода, Цибуля зелена, Олія
+    </string>
+
+</resources>
