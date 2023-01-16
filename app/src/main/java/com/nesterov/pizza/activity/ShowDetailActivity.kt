@@ -27,6 +27,7 @@ class ShowDetailActivity : AppCompatActivity() {
                 priceTxt.text = food.money.toString()
                 imageFood.setImageResource(food.image)
                 descriptionTxt.setText(food.description)
+                totalMoney.text = food.money.toString()
             }
             plusBtn.setOnClickListener {
                 plusProduct()

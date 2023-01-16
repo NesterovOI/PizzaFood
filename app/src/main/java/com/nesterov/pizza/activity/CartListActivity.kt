@@ -27,8 +27,6 @@ class CartListActivity : AppCompatActivity() {
         binding = ActivityCartListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //   empty()
-
         binding.apply {
             cartRecyclerView.setHasFixedSize(true)
             cartRecyclerView.layoutManager = LinearLayoutManager(
@@ -37,29 +35,34 @@ class CartListActivity : AppCompatActivity() {
 
             itemList = ArrayList()
 
-            var intent = intent
+            val intent = intent
             val image: Int = intent.getIntExtra(Constants.IMAGE_FOOD, 0)
             val title = intent.getStringExtra(Constants.TITLE_FOOD)
             val number = intent.getStringExtra(Constants.NUMBER_FOOD)
             val money = intent.getStringExtra(Constants.MONEY_FOOD)
             val totalMoney = intent.getStringExtra(Constants.TOTAL_MONEY)
+            try {
+                val numberAdd: Int = number.toString().toInt()
+                val moneyAdd: Double = money.toString().toDouble()
+                val totalMoneyAdd: Double = totalMoney.toString().toDouble()
+                allFoodTxt.text = money
+                totalManyTxt.text = totalMoney
 
-            val numberAdd : Int = number.toString().toInt()
-            val moneyAdd : Double = money.toString().toDouble()
-            val totalMoneyAdd : Double = totalMoney.toString().toDouble()
+                val food = FoodCart(image, title, numberAdd, moneyAdd, totalMoneyAdd)
 
-            allFoodTxt.text = money
-            totalManyTxt.text = totalMoney
+                adapterFood.addFoodDomain(food)
+                cartRecyclerView.adapter = adapterFood
+                //empty()
+            } catch (e: NumberFormatException) {
+                return
+            }
 
-            val food = FoodCart(image, title, numberAdd, moneyAdd, totalMoneyAdd)
-
-            adapterFood.addFoodDomain(food)
-            cartRecyclerView.adapter = adapterFood
 
             adapterFood.itemClick = {
                 val i = Intent(this@CartListActivity, CartListActivity::class.java)
                 i.putExtra("item", it)
                 startActivity(i)
+                empty()
             }
 
             deliveryCheckBox.setOnClickListener {
@@ -72,6 +75,7 @@ class CartListActivity : AppCompatActivity() {
             }
         }
 
+
     }
 
     fun checkBox() = with(binding) {
@@ -83,7 +87,8 @@ class CartListActivity : AppCompatActivity() {
     }
 
     fun empty() = with(binding) {
-        if (cartRecyclerView.isEmpty()) {
+        val sum = totalManyTxt.text.toString().toDouble()
+        if (sum == 0.0) {
             scrollView.visibility = View.GONE
             emptyTxt.visibility = View.VISIBLE
         } else {

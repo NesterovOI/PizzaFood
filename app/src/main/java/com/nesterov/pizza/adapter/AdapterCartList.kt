@@ -27,20 +27,22 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>() {
 
         holder.plusCartBtn.setOnClickListener{
             val many = holder.money.text.toString().toDouble()
+            val manyTotal = holder.totalMoney.text.toString().toDouble()
             var number = holder.number.text.toString().toInt()
             number++
-            val sum = many * number
+            val sum = (many * number)
             holder.number.text = number.toString()
             holder.totalMoney.text = sum.toString()
         }
 
         holder.minusCartBtn.setOnClickListener{
             val many = holder.money.text.toString().toDouble()
+            val manyTotal = holder.totalMoney.text.toString().toDouble()
             var number = holder.number.text.toString().toInt()
             if (number > 1){
                 number--
                 holder.number.text = number.toString()
-                val sum = many / number
+                val sum = manyTotal - many
                 holder.totalMoney.text = sum.toString()
             }
         }
