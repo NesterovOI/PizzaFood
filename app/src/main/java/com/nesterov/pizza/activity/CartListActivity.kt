@@ -8,6 +8,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isEmpty
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nesterov.pizza.`interface`.SumaCartListActivity
 import com.nesterov.pizza.adapter.AdapterCartList
 import com.nesterov.pizza.adapter.AdapterPopularFood
 import com.nesterov.pizza.constants.Constants
@@ -16,11 +17,13 @@ import com.nesterov.pizza.data.FoodCart
 import com.nesterov.pizza.databinding.ActivityCartListBinding
 
 
-class CartListActivity : AppCompatActivity() {
+class CartListActivity : AppCompatActivity(), SumaCartListActivity {
 
     lateinit var binding: ActivityCartListBinding
     val adapterFood = AdapterCartList()
     lateinit var itemList: ArrayList<FoodCart>
+    val tax = 100
+    var allSuma = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +48,7 @@ class CartListActivity : AppCompatActivity() {
                 val numberAdd: Int = number.toString().toInt()
                 val moneyAdd: Double = money.toString().toDouble()
                 val totalMoneyAdd: Double = totalMoney.toString().toDouble()
-                allFoodTxt.text = money
+                allFoodTxt.text = totalMoney
                 totalManyTxt.text = totalMoney
 
                 val food = FoodCart(image, title, numberAdd, moneyAdd, totalMoneyAdd)
@@ -81,8 +84,13 @@ class CartListActivity : AppCompatActivity() {
     fun checkBox() = with(binding) {
         if (deliveryCheckBox.isChecked) {
             taxi.visibility = View.VISIBLE
+            taxManyTxt.text = tax.toString()
+            val moneyTaxi = totalManyTxt.text.toString().toDouble() + taxManyTxt.text.toString().toDouble()
+            totalManyTxt.text = moneyTaxi.toString()
         } else {
             taxi.visibility = View.GONE
+            val moneyTaxi = totalManyTxt.text.toString().toDouble() - tax
+            totalManyTxt.text = moneyTaxi.toString()
         }
     }
 
@@ -95,5 +103,9 @@ class CartListActivity : AppCompatActivity() {
             scrollView.visibility = View.VISIBLE
             emptyTxt.visibility = View.GONE
         }
+    }
+
+    override fun sumaCartList(foodCart: FoodCart) {
+        allSuma = foodCart.totalMoney
     }
 }
