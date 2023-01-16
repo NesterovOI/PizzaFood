@@ -20,7 +20,7 @@ class ViewHolderCartList(item: View): RecyclerView.ViewHolder(item) {
 
     fun bind(food: FoodCart){
         title.text = food.title
-        number.setText(food.number.toString())
+        number.text = food.number.toString()
         money.text = food.money.toString()
         totalMoney.text = food.totalMoney.toString()
     }

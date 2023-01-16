@@ -2,10 +2,12 @@ package com.nesterov.pizza.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.R
 import com.nesterov.pizza.data.Food
 import com.nesterov.pizza.data.FoodCart
+import android.widget.Toast.makeText as x
 
 class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>() {
 
@@ -19,12 +21,13 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolderCartList, position: Int) {
-       // val itemClickMenu = foodList[position]
+        val itemClickMenu = foodList[position]
         holder.bind(foodList[position])
+
 
         holder.plusCartBtn.setOnClickListener{
             val many = holder.money.text.toString().toDouble()
-            var number = holder.number.toString().toInt()
+            var number = holder.number.text.toString().toInt()
             number++
             val sum = many * number
             holder.number.text = number.toString()
@@ -33,17 +36,15 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>() {
 
         holder.minusCartBtn.setOnClickListener{
             val many = holder.money.text.toString().toDouble()
-            var number = holder.number.toString().toInt()
+            var number = holder.number.text.toString().toInt()
             if (number > 1){
                 number--
-                holder.number.setText(number)
+                holder.number.text = number.toString()
                 val sum = many / number
                 holder.totalMoney.text = sum.toString()
             }
         }
-//        holder.itemView.setOnClickListener{
-//            itemClick?.invoke(itemClickMenu)
-//        }
+
     }
 
     override fun getItemCount(): Int {
