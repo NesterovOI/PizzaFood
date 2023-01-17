@@ -1,6 +1,7 @@
 package com.nesterov.pizza.activity
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,10 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
     lateinit var itemList: ArrayList<FoodCart>
     val tax = 100
     var allSuma = 0.0
+    var numberAdd = 0
+    var moneyAdd: Double = 0.0
+    var totalMoneyAdd: Double = 0.0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,28 +49,27 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
             val number = intent.getStringExtra(Constants.NUMBER_FOOD)
             val money = intent.getStringExtra(Constants.MONEY_FOOD)
             val totalMoney = intent.getStringExtra(Constants.TOTAL_MONEY)
-            try {
-                val numberAdd: Int = number.toString().toInt()
-                val moneyAdd: Double = money.toString().toDouble()
-                val totalMoneyAdd: Double = totalMoney.toString().toDouble()
+
+            if(number != null){
+                numberAdd = number.toString().toInt()
+                moneyAdd= money.toString().toDouble()
+                totalMoneyAdd= totalMoney.toString().toDouble()
                 allFoodTxt.text = totalMoney
                 totalManyTxt.text = totalMoney
-
-                val food = FoodCart(image, title, numberAdd, moneyAdd, totalMoneyAdd)
-
-                adapterFood.addFoodDomain(food)
-                cartRecyclerView.adapter = adapterFood
-                //empty()
-            } catch (e: NumberFormatException) {
-                return
+            } else{
+                empty()
             }
+
+            val food = FoodCart(image, title, numberAdd, moneyAdd, totalMoneyAdd)
+
+            adapterFood.addFoodDomain(food)
+            cartRecyclerView.adapter = adapterFood
 
 
             adapterFood.itemClick = {
                 val i = Intent(this@CartListActivity, CartListActivity::class.java)
                 i.putExtra("item", it)
                 startActivity(i)
-                empty()
             }
 
             deliveryCheckBox.setOnClickListener {
@@ -95,8 +99,8 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
     }
 
     fun empty() = with(binding) {
-        val sum = totalManyTxt.text.toString().toDouble()
-        if (sum == 0.0) {
+        val sum: String = totalManyTxt.text.toString()
+        if (sum == "0.0") {
             scrollView.visibility = View.GONE
             emptyTxt.visibility = View.VISIBLE
         } else {
