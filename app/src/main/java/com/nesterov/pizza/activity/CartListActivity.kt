@@ -110,6 +110,7 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
     }
 
     override fun sumaCartList(foodCart: FoodCart) {
-        allSuma = foodCart.totalMoney
+        moneyAdd = foodCart.money
+        totalMoneyAdd = foodCart.totalMoney
     }
 }
