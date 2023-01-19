@@ -1,19 +1,14 @@
 package com.nesterov.pizza.activity
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.view.isEmpty
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.`interface`.SumaCartListActivity
 import com.nesterov.pizza.adapter.AdapterCartList
-import com.nesterov.pizza.adapter.AdapterPopularFood
+import com.nesterov.pizza.bd.ManagementCart
 import com.nesterov.pizza.constants.Constants
-import com.nesterov.pizza.data.Food
 import com.nesterov.pizza.data.FoodCart
 import com.nesterov.pizza.databinding.ActivityCartListBinding
 
@@ -42,6 +37,7 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
             )
 
             itemList = ArrayList()
+            val managementCart = ManagementCart()
 
             val intent = intent
             val image: Int = intent.getIntExtra(Constants.IMAGE_FOOD, 0)
@@ -64,7 +60,6 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
 
             adapterFood.addFoodDomain(food)
             cartRecyclerView.adapter = adapterFood
-
 
             adapterFood.itemClick = {
                 val i = Intent(this@CartListActivity, CartListActivity::class.java)

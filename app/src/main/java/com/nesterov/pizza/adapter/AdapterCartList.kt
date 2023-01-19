@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.R
 import com.nesterov.pizza.`interface`.SumaCartListActivity
+import com.nesterov.pizza.bd.ManagementCart
 import com.nesterov.pizza.data.FoodCart
 
 class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>(), SumaCartListActivity {
@@ -29,7 +30,6 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>(), SumaCartList
             sum = (many * number)
             holder.number.text = number.toString()
             holder.totalMoney.text = sum.toString()
-
         }
 
         holder.minusCartBtn.setOnClickListener {
