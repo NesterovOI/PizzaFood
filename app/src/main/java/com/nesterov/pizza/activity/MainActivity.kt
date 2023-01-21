@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.R
-import com.nesterov.pizza.adapter.AdapterPizza
+import com.nesterov.pizza.adapter.AdapterCategories
 import com.nesterov.pizza.adapter.AdapterPopularFood
 import com.nesterov.pizza.constants.Constants
-import com.nesterov.pizza.data.Pizza
+import com.nesterov.pizza.data.Categories
 import com.nesterov.pizza.data.Food
 import com.nesterov.pizza.databinding.ActivityMainBinding
 
@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity(){
 
     lateinit var binding: ActivityMainBinding
 
-    lateinit var itemList: ArrayList<Pizza>
-    lateinit var itemAdapter: AdapterPizza
+    lateinit var itemList: ArrayList<Categories>
+    lateinit var itemAdapter: AdapterCategories
 
     lateinit var itemListFood: ArrayList<Food>
     lateinit var itemAdapterPopularFood: AdapterPopularFood
@@ -46,16 +46,16 @@ class MainActivity : AppCompatActivity(){
         )
         itemList = ArrayList()
 
-        itemList.add(Pizza(R.drawable.cat_1, R.drawable.category_backgrount, R.string.cat1))
-        itemList.add(Pizza(R.drawable.cat_2, R.drawable.category_backgrount2, R.string.cat2))
-        itemList.add(Pizza(R.drawable.cat_3, R.drawable.category_backgrount3, R.string.cat3))
-        itemList.add(Pizza(R.drawable.cat_4, R.drawable.category_backgrount4, R.string.cat4))
-        itemList.add(Pizza(R.drawable.cat_5, R.drawable.category_backgrount5, R.string.cat5))
-        itemList.add(Pizza(R.drawable.cat_6, R.drawable.category_backgrount6, R.string.cat6))
-        itemList.add(Pizza(R.drawable.cat_7, R.drawable.category_backgrount7, R.string.cat7))
-        itemList.add(Pizza(R.drawable.cat_8, R.drawable.category_backgrount8, R.string.cat8))
+        itemList.add(Categories(R.drawable.cat_1, R.drawable.category_backgrount, R.string.cat1))
+        itemList.add(Categories(R.drawable.cat_2, R.drawable.category_backgrount2, R.string.cat2))
+        itemList.add(Categories(R.drawable.cat_3, R.drawable.category_backgrount3, R.string.cat3))
+        itemList.add(Categories(R.drawable.cat_4, R.drawable.category_backgrount4, R.string.cat4))
+        itemList.add(Categories(R.drawable.cat_5, R.drawable.category_backgrount5, R.string.cat5))
+        itemList.add(Categories(R.drawable.cat_6, R.drawable.category_backgrount6, R.string.cat6))
+        itemList.add(Categories(R.drawable.cat_7, R.drawable.category_backgrount7, R.string.cat7))
+        itemList.add(Categories(R.drawable.cat_8, R.drawable.category_backgrount8, R.string.cat8))
 
-        itemAdapter = AdapterPizza(itemList)
+        itemAdapter = AdapterCategories(itemList)
         idRecyclerViewCategories.adapter = itemAdapter
     }
 

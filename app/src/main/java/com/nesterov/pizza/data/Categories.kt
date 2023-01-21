@@ -3,7 +3,7 @@ package com.nesterov.pizza.data
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Pizza (val image: Int, val fonLayout: Int, val title: Int): Parcelable {
+data class Categories (val image: Int, val fonLayout: Int, val title: Int): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readInt(),
@@ -21,12 +21,12 @@ data class Pizza (val image: Int, val fonLayout: Int, val title: Int): Parcelabl
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Pizza> {
-        override fun createFromParcel(parcel: Parcel): Pizza {
-            return Pizza(parcel)
+    companion object CREATOR : Parcelable.Creator<Categories> {
+        override fun createFromParcel(parcel: Parcel): Categories {
+            return Categories(parcel)
         }
 
-        override fun newArray(size: Int): Array<Pizza?> {
+        override fun newArray(size: Int): Array<Categories?> {
             return arrayOfNulls(size)
         }
     }

@@ -4,21 +4,21 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.R
-import com.nesterov.pizza.data.Pizza
+import com.nesterov.pizza.data.Categories
 
-class AdapterPizza(private val activityListPizza: ArrayList<Pizza>):
-RecyclerView.Adapter<ViewHolderPizza>(){
+class AdapterCategories(private val activityListCategories: ArrayList<Categories>):
+RecyclerView.Adapter<ViewHolderCategories>(){
 
-    private var itemClick: ((Pizza)->Unit)? = null
+    private var itemClick: ((Categories)->Unit)? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPizza {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderCategories {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_category,
             parent,false)
-        return ViewHolderPizza(view)
+        return ViewHolderCategories(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolderPizza, position: Int) {
-        val itemClickMenu = activityListPizza[position]
+    override fun onBindViewHolder(holder: ViewHolderCategories, position: Int) {
+        val itemClickMenu = activityListCategories[position]
         holder.imageView.setImageResource(itemClickMenu.image)
         holder.textName.setText(itemClickMenu.title)
         holder.mainLayout.setBackgroundResource(itemClickMenu.fonLayout)
@@ -29,6 +29,6 @@ RecyclerView.Adapter<ViewHolderPizza>(){
     }
 
     override fun getItemCount(): Int {
-        return activityListPizza.size
+        return activityListCategories.size
     }
 }
