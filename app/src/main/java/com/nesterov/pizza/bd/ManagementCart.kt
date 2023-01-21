@@ -1,5 +1,6 @@
 package com.nesterov.pizza.bd
 
+import android.widget.CheckBox
 import com.nesterov.pizza.data.FoodCart
 
 class ManagementCart {
@@ -13,6 +14,10 @@ class ManagementCart {
         }
 
         return money
+    }
+
+    fun plusTaxMoney(checkBox: CheckBox){
+
     }
 
 }

@@ -4,5 +4,5 @@ import android.widget.TextView
 import com.nesterov.pizza.data.FoodCart
 
 interface SumaCartListActivity {
-    fun sumaCartList(foodCart: FoodCart)
+    fun addFoodTotalMoney(sum: Double): String
 }

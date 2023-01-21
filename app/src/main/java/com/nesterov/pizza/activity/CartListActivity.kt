@@ -16,10 +16,9 @@ import com.nesterov.pizza.databinding.ActivityCartListBinding
 class CartListActivity : AppCompatActivity(), SumaCartListActivity {
 
     lateinit var binding: ActivityCartListBinding
-    val adapterFood = AdapterCartList()
+    val adapterFood = AdapterCartList(this)
     lateinit var itemList: ArrayList<FoodCart>
     val tax = 100
-    var allSuma = 0.0
     var numberAdd = 0
     var moneyAdd: Double = 0.0
     var totalMoneyAdd: Double = 0.0
@@ -59,6 +58,7 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
             val food = FoodCart(image, title, numberAdd, moneyAdd, totalMoneyAdd)
 
             adapterFood.addFoodDomain(food)
+          //  totalManyTxt.text = adapterFood.addFoodTotalMoney()
             cartRecyclerView.adapter = adapterFood
 
             adapterFood.itemClick = {
@@ -76,7 +76,6 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
                 finish()
             }
         }
-
 
     }
 
@@ -104,8 +103,11 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
         }
     }
 
-    override fun sumaCartList(foodCart: FoodCart) {
-        moneyAdd = foodCart.money
-        totalMoneyAdd = foodCart.totalMoney
+    override fun addFoodTotalMoney(sum: Double): String {
+        binding.apply {
+            allFoodTxt.text = sum.toString()
+            totalManyTxt.text = sum.toString()
+        }
+        return sum.toString()
     }
 }

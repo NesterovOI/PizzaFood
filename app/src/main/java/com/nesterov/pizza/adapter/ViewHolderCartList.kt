@@ -5,7 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.R
-import com.nesterov.pizza.data.Food
+import com.nesterov.pizza.`interface`.SumaCartListActivity
 import com.nesterov.pizza.data.FoodCart
 
 class ViewHolderCartList(item: View): RecyclerView.ViewHolder(item) {
@@ -18,7 +18,7 @@ class ViewHolderCartList(item: View): RecyclerView.ViewHolder(item) {
     val plusCartBtn: ImageView = item.findViewById(R.id.plusCartBtn)
     val number: TextView = item.findViewById(R.id.numberItemTxt)
 
-    fun bind(food: FoodCart){
+    fun bind(food: FoodCart, sumaCartListActivity: SumaCartListActivity){
         title.text = food.title
         number.text = food.number.toString()
         money.text = food.money.toString()

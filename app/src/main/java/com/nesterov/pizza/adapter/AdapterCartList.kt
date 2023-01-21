@@ -5,10 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.R
 import com.nesterov.pizza.`interface`.SumaCartListActivity
-import com.nesterov.pizza.bd.ManagementCart
 import com.nesterov.pizza.data.FoodCart
 
-class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>(), SumaCartListActivity {
+class AdapterCartList(val sumaCartListActivity: SumaCartListActivity) : RecyclerView.Adapter<ViewHolderCartList>() {
 
     val foodList = ArrayList<FoodCart>()
     var itemClick: ((FoodCart) -> Unit)? = null
@@ -21,7 +20,7 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>(), SumaCartList
     }
 
     override fun onBindViewHolder(holder: ViewHolderCartList, position: Int) {
-        holder.bind(foodList[position])
+        holder.bind(foodList[position], sumaCartListActivity)
 
         holder.plusCartBtn.setOnClickListener {
             val many = holder.money.text.toString().toDouble()
@@ -30,6 +29,7 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>(), SumaCartList
             sum = (many * number)
             holder.number.text = number.toString()
             holder.totalMoney.text = sum.toString()
+            sumaCartListActivity.addFoodTotalMoney(sum)
         }
 
         holder.minusCartBtn.setOnClickListener {
@@ -41,6 +41,7 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>(), SumaCartList
                 holder.number.text = number.toString()
                 sum = manyTotal - many
                 holder.totalMoney.text = sum.toString()
+                sumaCartListActivity.addFoodTotalMoney(sum)
             }
         }
 
@@ -53,9 +54,5 @@ class AdapterCartList : RecyclerView.Adapter<ViewHolderCartList>(), SumaCartList
     fun addFoodDomain(food: FoodCart) {
         foodList.add(food)
         notifyDataSetChanged()
-    }
-
-    override fun sumaCartList(foodCart: FoodCart) {
-        foodCart.totalMoney = sum
     }
 }
