@@ -107,7 +107,16 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
         binding.apply {
             allFoodTxt.text = sum.toString()
             totalManyTxt.text = sum.toString()
+            val totalManySum: Double = totalManyTxt.text.toString().toDouble()
+
+            if (deliveryCheckBox.isChecked){
+                val res  = totalManySum + tax
+                totalManyTxt.text = res.toString()
+            }
+
         }
+
+
         return sum.toString()
     }
 }
