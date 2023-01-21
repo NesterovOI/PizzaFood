@@ -57,6 +57,22 @@ class MainActivity : AppCompatActivity(){
 
         itemAdapter = AdapterCategories(itemList)
         idRecyclerViewCategories.adapter = itemAdapter
+
+        itemAdapter.itemClick = {
+            val i = Intent(this@MainActivity, MainActivity::class.java)
+            i.putExtra("open", it)
+            startActivity(i)
+        }
+
+        val itemOnClick = intent.getParcelableExtra<Categories>("open")
+        if (itemOnClick != null) {
+            if (itemOnClick.image == R.drawable.cat_1){
+                val i = Intent(this@MainActivity, Registration::class.java)
+                i.putExtra(Constants.ITEM_LIST_POPULAR_FOOD, itemList[0])
+                startActivity(i)
+            }
+        }
+
     }
 
     fun recyclerViewPopulars() = with(binding) {

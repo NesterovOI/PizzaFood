@@ -9,7 +9,7 @@ import com.nesterov.pizza.data.Categories
 class AdapterCategories(private val activityListCategories: ArrayList<Categories>):
 RecyclerView.Adapter<ViewHolderCategories>(){
 
-    private var itemClick: ((Categories)->Unit)? = null
+    var itemClick: ((Categories)->Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderCategories {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_category,
