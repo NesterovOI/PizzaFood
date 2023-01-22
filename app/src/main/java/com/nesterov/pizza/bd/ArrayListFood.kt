@@ -65,4 +65,31 @@ class ArrayListFood {
         itemList.add(Food(R.drawable.drinks5, R.string.drinks5_title, R.string.drinks5_description, 30.00))
     }
 
+    fun networksListFood(itemList: ArrayList<Food>){
+        itemList.add(Food(R.drawable.networks1, R.string.networks1_title, R.string.networks1_description, 500.00))
+        itemList.add(Food(R.drawable.networks2, R.string.networks2_title, R.string.networks2_description, 500.00))
+        itemList.add(Food(R.drawable.networks3, R.string.networks3_title, R.string.networks3_description, 500.00))
+        itemList.add(Food(R.drawable.networks4, R.string.networks4_title, R.string.networks4_description, 500.00))
+        itemList.add(Food(R.drawable.networks5, R.string.networks5_title, R.string.networks5_description, 500.00))
+        itemList.add(Food(R.drawable.networks6, R.string.networks6_title, R.string.networks6_description, 500.00))
+        itemList.add(Food(R.drawable.networks7, R.string.networks7_title, R.string.networks7_description, 500.00))
+        itemList.add(Food(R.drawable.networks8, R.string.networks8_title, R.string.networks8_description, 500.00))
+        itemList.add(Food(R.drawable.networks9, R.string.networks9_title, R.string.networks9_description, 500.00))
+        itemList.add(Food(R.drawable.networks10, R.string.networks10_title, R.string.networks10_description, 500.00))
+        itemList.add(Food(R.drawable.networks11, R.string.networks11_title, R.string.networks11_description, 500.00))
+        itemList.add(Food(R.drawable.networks12, R.string.networks12_title, R.string.networks12_description, 500.00))
+        itemList.add(Food(R.drawable.networks13, R.string.networks13_title, R.string.networks13_description, 500.00))
+        itemList.add(Food(R.drawable.networks14, R.string.networks14_title, R.string.networks14_description, 500.00))
+        itemList.add(Food(R.drawable.networks15, R.string.networks15_title, R.string.networks15_description, 500.00))
+        itemList.add(Food(R.drawable.networks16, R.string.networks16_title, R.string.networks16_description, 500.00))
+        itemList.add(Food(R.drawable.networks17, R.string.networks17_title, R.string.networks17_description, 500.00))
+        itemList.add(Food(R.drawable.networks18, R.string.networks18_title, R.string.networks18_description, 500.00))
+        itemList.add(Food(R.drawable.networks19, R.string.networks19_title, R.string.networks19_description, 500.00))
+        itemList.add(Food(R.drawable.networks20, R.string.networks20_title, R.string.networks20_description, 500.00))
+        itemList.add(Food(R.drawable.networks21, R.string.networks21_title, R.string.networks21_description, 500.00))
+        itemList.add(Food(R.drawable.networks22, R.string.networks22_title, R.string.networks22_description, 500.00))
+        itemList.add(Food(R.drawable.networks23, R.string.networks23_title, R.string.networks23_description, 500.00))
+        itemList.add(Food(R.drawable.networks24, R.string.networks24_title, R.string.networks24_description, 500.00))
+    }
+
 }
