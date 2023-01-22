@@ -1,5 +1,6 @@
 package com.nesterov.pizza.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity(){
         }
 
         val itemOnClick = intent.getParcelableExtra<Categories>("open")
+
         if (itemOnClick != null) {
             if (itemOnClick.image == R.drawable.cat_1){
                 val i = Intent(this@MainActivity, Registration::class.java)
@@ -134,5 +136,7 @@ class MainActivity : AppCompatActivity(){
         i.putExtra(Constants.ITEM_LIST_POPULAR_FOOD, itemListFood[index])
         startActivity(i)
     }
+
+
 
 }

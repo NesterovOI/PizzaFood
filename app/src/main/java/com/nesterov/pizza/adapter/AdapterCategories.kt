@@ -18,6 +18,14 @@ RecyclerView.Adapter<ViewHolderCategories>(){
     }
 
     override fun onBindViewHolder(holder: ViewHolderCategories, position: Int) {
+
+
+//        if (position == 0){
+//            val i = Intent(context, Registration::class.java)
+//            context.startActivities(i)
+//
+//        }
+
         val itemClickMenu = activityListCategories[position]
         holder.imageView.setImageResource(itemClickMenu.image)
         holder.textName.setText(itemClickMenu.title)
