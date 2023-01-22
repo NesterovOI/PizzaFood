@@ -28,7 +28,8 @@ class AdditionActivity : AppCompatActivity() {
         recyclerViewAddition()
 
     }
-    fun recyclerViewAddition() = with(binding){
+
+    fun recyclerViewAddition() = with(binding) {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(
             this@AdditionActivity, LinearLayoutManager.VERTICAL, false
@@ -47,27 +48,35 @@ class AdditionActivity : AppCompatActivity() {
 
         val onClick = intent.getParcelableExtra<Food>("addition")
 
-        if(onClick != null){
-            if (onClick.image == R.drawable.addition1){
+        if (onClick != null) {
+            if (onClick.image == R.drawable.addition1) {
                 managementFood.intentItemList(this@AdditionActivity, 0, itemList)
-            }else
-                if(onClick.image == R.drawable.addition2){
+            } else
+                if (onClick.image == R.drawable.addition2) {
                     managementFood.intentItemList(this@AdditionActivity, 1, itemList)
-                }else
-                    if(onClick.image == R.drawable.addition3){
+                } else
+                    if (onClick.image == R.drawable.addition3) {
                         managementFood.intentItemList(this@AdditionActivity, 2, itemList)
-                    }else
-                        if(onClick.image == R.drawable.addition4){
+                    } else
+                        if (onClick.image == R.drawable.addition4) {
                             managementFood.intentItemList(this@AdditionActivity, 3, itemList)
-                        }else
-                            if(onClick.image == R.drawable.addition5){
+                        } else
+                            if (onClick.image == R.drawable.addition5) {
                                 managementFood.intentItemList(this@AdditionActivity, 4, itemList)
-                            }else
-                                if(onClick.image == R.drawable.addition6){
-                                    managementFood.intentItemList(this@AdditionActivity, 5, itemList)
-                                }else
-                                    if(onClick.image == R.drawable.addition7){
-                                        managementFood.intentItemList(this@AdditionActivity, 6, itemList)
+                            } else
+                                if (onClick.image == R.drawable.addition6) {
+                                    managementFood.intentItemList(
+                                        this@AdditionActivity,
+                                        5,
+                                        itemList
+                                    )
+                                } else
+                                    if (onClick.image == R.drawable.addition7) {
+                                        managementFood.intentItemList(
+                                            this@AdditionActivity,
+                                            6,
+                                            itemList
+                                        )
                                     }
         }
     }
