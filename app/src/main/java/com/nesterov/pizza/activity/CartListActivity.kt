@@ -7,7 +7,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.`interface`.SumaCartListActivity
 import com.nesterov.pizza.adapter.AdapterCartList
-import com.nesterov.pizza.bd.ManagementCart
+import com.nesterov.pizza.bd.ManagementFood
 import com.nesterov.pizza.constants.Constants
 import com.nesterov.pizza.data.FoodCart
 import com.nesterov.pizza.databinding.ActivityCartListBinding
@@ -36,7 +36,7 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
             )
 
             itemList = ArrayList()
-            val managementCart = ManagementCart()
+            val managementCart = ManagementFood()
 
             val intent = intent
             val image: Int = intent.getIntExtra(Constants.IMAGE_FOOD, 0)

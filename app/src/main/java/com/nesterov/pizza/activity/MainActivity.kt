@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.R
 import com.nesterov.pizza.adapter.AdapterCategories
 import com.nesterov.pizza.adapter.AdapterPopularFood
+import com.nesterov.pizza.bd.ManagementFood
 import com.nesterov.pizza.constants.Constants
 import com.nesterov.pizza.data.Categories
 import com.nesterov.pizza.data.Food
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity(){
 
     lateinit var itemListFood: ArrayList<Food>
     lateinit var itemAdapterPopularFood: AdapterPopularFood
+
+    val managementFood = ManagementFood()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -145,26 +148,17 @@ class MainActivity : AppCompatActivity(){
         if (itemOnClick != null){
 
             if (itemOnClick.image == R.drawable.pop_1){
-                intentItemListPopularFood(0)
+                managementFood.intentItemList(this@MainActivity,0, itemListFood)
             } else
             if (itemOnClick.image == R.drawable.cat_2){
-                intentItemListPopularFood(1)
+                managementFood.intentItemList(this@MainActivity,1, itemListFood)
             } else
             if (itemOnClick.image == R.drawable.pop_3){
-                intentItemListPopularFood(2)
+                managementFood.intentItemList(this@MainActivity,2, itemListFood)
             } else
             if (itemOnClick.image == R.drawable.cat_4){
-                intentItemListPopularFood(3)
+                managementFood.intentItemList(this@MainActivity,3, itemListFood)
             }
         }
     }
-
-    fun intentItemListPopularFood(index: Int){
-        val i = Intent(this, ShowDetailActivity::class.java)
-        i.putExtra(Constants.ITEM_LIST_POPULAR_FOOD, itemListFood[index])
-        startActivity(i)
-    }
-
-
-
 }

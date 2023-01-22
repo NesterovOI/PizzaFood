@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.R
 import com.nesterov.pizza.data.Food
 
-class AdapterCategoriesList(val listCategories: ArrayList<Food>): RecyclerView.Adapter<ViewHolderCategoriesList>() {
+class AdapterCategoriesList(val listCategories: ArrayList<Food>):
+    RecyclerView.Adapter<ViewHolderCategoriesList>() {
 
     var itemClick: ((Food) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderCategoriesList {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_category, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_category_activity,
+            parent, false)
+
         return ViewHolderCategoriesList(view)
     }
 
@@ -19,8 +22,8 @@ class AdapterCategoriesList(val listCategories: ArrayList<Food>): RecyclerView.A
         val itemClickMenu = listCategories[position]
 
         holder.image.setImageResource(itemClickMenu.image)
-        holder.title.text = itemClickMenu.title.toString()
-        holder.description.text = itemClickMenu.description.toString()
+        holder.title.setText(itemClickMenu.title)
+        holder.description.setText(itemClickMenu.description)
         holder.money.text = itemClickMenu.money.toString()
 
         holder.itemView.setOnClickListener{
