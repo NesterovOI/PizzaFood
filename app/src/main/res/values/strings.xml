@@ -33,6 +33,8 @@
     <string name="empty">Ваш кошик пустий</string>
     <string name="many">грн.</string>
     <string name="all_many">Всього грн.</string>
+    <string name="tittle">Назва</string>
+    <string name="price">0</string>
 
     <string name="salad1_title"><b>Курячі стріпси — 140 г</b></string>
     <string name="salad1_description"><b>Склад:</b> Філе куряче, Сіль, Перець, Борошно, Яйце, Панко,
