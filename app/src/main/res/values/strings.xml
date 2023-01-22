@@ -171,8 +171,11 @@
     <string name="drinks2_description"><b>Склад:</b> Без газована</string>
 
     <string name="drinks3_title"><b>Кола 0,5</b></string>
+    <string name="drinks3_description"></string>
     <string name="drinks4_title"><b>Лимонад імбірний</b></string>
+    <string name="drinks4_description"></string>
     <string name="drinks5_title"><b>Морс ягідний</b></string>
+    <string name="drinks5_description"></string>
 
     <string name="pizza1_title"><b>Піца 4 м\'яса — 450 г</b></string>
     <string name="pizza1_description"><b>Склад:</b> Соус томатний, Сир моцарела, Пепероні, Ветчина,
