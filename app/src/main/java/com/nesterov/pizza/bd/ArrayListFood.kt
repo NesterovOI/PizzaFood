@@ -41,4 +41,14 @@ class ArrayListFood {
         itemList.add(Food(R.drawable.pizza13, R.string.pizza13_title, R.string.pizza13_description, 190.00))
     }
 
+    fun additionListFood(itemList: ArrayList<Food>){
+        itemList.add(Food(R.drawable.addition1, R.string.addition1_title, R.string.addition1_description, 15.00))
+        itemList.add(Food(R.drawable.addition2, R.string.addition2_title, R.string.addition2_description, 15.00))
+        itemList.add(Food(R.drawable.addition3, R.string.addition3_title, R.string.addition3_description, 15.00))
+        itemList.add(Food(R.drawable.addition4, R.string.addition4_title, R.string.addition1_description, 15.00))
+        itemList.add(Food(R.drawable.addition5, R.string.addition5_title, R.string.addition1_description, 15.00))
+        itemList.add(Food(R.drawable.addition6, R.string.addition6_title, R.string.addition1_description, 15.00))
+        itemList.add(Food(R.drawable.addition7, R.string.addition7_title, R.string.addition1_description, 15.00))
+    }
+
 }

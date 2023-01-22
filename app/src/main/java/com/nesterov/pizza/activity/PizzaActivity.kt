@@ -17,8 +17,8 @@ class PizzaActivity : AppCompatActivity() {
     lateinit var binding: ActivityPizzaBinding
     lateinit var itemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
-    val arrayListFood = ArrayListFood()
 
+    val arrayListFood = ArrayListFood()
     val managementFood = ManagementFood()
 
     override fun onCreate(savedInstanceState: Bundle?) {

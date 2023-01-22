@@ -119,8 +119,10 @@
     <string name="addition1_description"><b>Склад:</b> Авокадо — 25 г</string>
 
     <string name="addition2_title"><b>Васабі — 5 г</b></string>
+    <string name="addition2_description"></string>
 
     <string name="addition3_title"><b>Імбір — 7 г</b></string>
+    <string name="addition3_description"></string>
 
     <string name="addition4_title"><b>Сир філадельфія доповнення — 20 г</b></string>
     <string name="addition4_description"><b>Склад:</b> Сир філадельфія — 20 г</string>
