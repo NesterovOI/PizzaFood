@@ -69,9 +69,37 @@ class MainActivity : AppCompatActivity(){
 
         if (itemOnClick != null) {
             if (itemOnClick.image == R.drawable.cat_1){
-                val i = Intent(this@MainActivity, Registration::class.java)
-                i.putExtra(Constants.ITEM_LIST_POPULAR_FOOD, itemList[0])
+                val i = Intent(this@MainActivity, PizzaActivity::class.java)
                 startActivity(i)
+                finish()
+            }else if(itemOnClick.image == R.drawable.cat_2){
+                val i = Intent(this@MainActivity, RolesActivity::class.java)
+                startActivity(i)
+                finish()
+            }else if(itemOnClick.image == R.drawable.cat_3){
+                val i = Intent(this@MainActivity, NetworksActivity::class.java)
+                startActivity(i)
+                finish()
+            }else if(itemOnClick.image == R.drawable.cat_4){
+                val i = Intent(this@MainActivity, SaladActivity::class.java)
+                startActivity(i)
+                finish()
+            }else if(itemOnClick.image == R.drawable.cat_5){
+                val i = Intent(this@MainActivity, SoupsActivity::class.java)
+                startActivity(i)
+                finish()
+            }else if(itemOnClick.image == R.drawable.cat_6){
+                val i = Intent(this@MainActivity, AdditionActivity::class.java)
+                startActivity(i)
+                finish()
+            }else if(itemOnClick.image == R.drawable.cat_7){
+                val i = Intent(this@MainActivity, DessertActivity::class.java)
+                startActivity(i)
+                finish()
+            }else if(itemOnClick.image == R.drawable.cat_8){
+                val i = Intent(this@MainActivity, DrinksActivity::class.java)
+                startActivity(i)
+                finish()
             }
         }
 
