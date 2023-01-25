@@ -109,6 +109,8 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
             totalManyTxt.text = sum.toString()
             val totalManySum: Double = totalManyTxt.text.toString().toDouble()
 
+            // функція для знищення стрроки в скиску removeAt()
+
             if (deliveryCheckBox.isChecked){
                 val res  = totalManySum + tax
                 totalManyTxt.text = res.toString()

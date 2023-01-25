@@ -92,4 +92,49 @@ class ArrayListFood {
         itemList.add(Food(R.drawable.networks24, R.string.networks24_title, R.string.networks24_description, 500.00))
     }
 
+    fun rolesListFood(itemList: ArrayList<Food>){
+        itemList.add(Food(R.drawable.roles1, R.string.roles1_title, R.string.roles1_description, 300.00))
+        itemList.add(Food(R.drawable.roles2, R.string.roles2_title, R.string.roles2_description, 300.00))
+        itemList.add(Food(R.drawable.roles3, R.string.roles3_title, R.string.roles3_description, 300.00))
+        itemList.add(Food(R.drawable.roles4, R.string.roles4_title, R.string.roles4_description, 300.00))
+        itemList.add(Food(R.drawable.roles5, R.string.roles5_title, R.string.roles5_description, 300.00))
+        itemList.add(Food(R.drawable.roles6, R.string.roles6_title, R.string.roles6_description, 300.00))
+        itemList.add(Food(R.drawable.roles7, R.string.roles7_title, R.string.roles7_description, 300.00))
+        itemList.add(Food(R.drawable.roles8, R.string.roles8_title, R.string.roles8_description, 300.00))
+        itemList.add(Food(R.drawable.roles9, R.string.roles9_title, R.string.roles9_description, 300.00))
+        itemList.add(Food(R.drawable.roles10, R.string.roles10_title, R.string.roles10_description, 300.00))
+        itemList.add(Food(R.drawable.roles11, R.string.roles11_title, R.string.roles11_description, 300.00))
+        itemList.add(Food(R.drawable.roles12, R.string.roles12_title, R.string.roles12_description, 300.00))
+        itemList.add(Food(R.drawable.roles13, R.string.roles13_title, R.string.roles13_description, 300.00))
+        itemList.add(Food(R.drawable.roles14, R.string.roles14_title, R.string.roles14_description, 300.00))
+        itemList.add(Food(R.drawable.roles15, R.string.roles15_title, R.string.roles15_description, 300.00))
+        itemList.add(Food(R.drawable.roles16, R.string.roles16_title, R.string.roles16_description, 300.00))
+        itemList.add(Food(R.drawable.roles17, R.string.roles17_title, R.string.roles17_description, 300.00))
+        itemList.add(Food(R.drawable.roles18, R.string.roles18_title, R.string.roles18_description, 300.00))
+        itemList.add(Food(R.drawable.roles19, R.string.roles19_title, R.string.roles19_description, 300.00))
+        itemList.add(Food(R.drawable.roles20, R.string.roles20_title, R.string.roles20_description, 300.00))
+        itemList.add(Food(R.drawable.roles21, R.string.roles21_title, R.string.roles21_description, 300.00))
+        itemList.add(Food(R.drawable.roles22, R.string.roles22_title, R.string.roles22_description, 300.00))
+        itemList.add(Food(R.drawable.roles23, R.string.roles23_title, R.string.roles23_description, 300.00))
+    }
+
+    fun saladListFood(itemList: ArrayList<Food>){
+        itemList.add(Food(R.drawable.salad1, R.string.salad1_title, R.string.salad1_description, 120.00))
+        itemList.add(Food(R.drawable.salad2, R.string.salad2_title, R.string.salad2_description, 120.00))
+        itemList.add(Food(R.drawable.salad3, R.string.salad3_title, R.string.salad3_description, 120.00))
+        itemList.add(Food(R.drawable.salad4, R.string.salad4_title, R.string.salad4_description, 120.00))
+        itemList.add(Food(R.drawable.salad5, R.string.salad5_title, R.string.salad5_description, 120.00))
+        itemList.add(Food(R.drawable.salad6, R.string.salad6_title, R.string.salad6_description, 120.00))
+        itemList.add(Food(R.drawable.salad7, R.string.salad7_title, R.string.salad7_description, 120.00))
+        itemList.add(Food(R.drawable.salad8, R.string.salad8_title, R.string.salad8_description, 120.00))
+        itemList.add(Food(R.drawable.salad9, R.string.salad9_title, R.string.salad9_description, 120.00))
+        itemList.add(Food(R.drawable.salad10, R.string.salad10_title, R.string.salad10_description, 120.00))
+        itemList.add(Food(R.drawable.salad11, R.string.salad11_title, R.string.salad11_description, 120.00))
+        itemList.add(Food(R.drawable.salad12, R.string.salad12_title, R.string.salad12_description, 120.00))
+        itemList.add(Food(R.drawable.salad13, R.string.salad13_title, R.string.salad13_description, 120.00))
+        itemList.add(Food(R.drawable.salad14, R.string.salad14_title, R.string.salad14_description, 120.00))
+        itemList.add(Food(R.drawable.salad15, R.string.salad15_title, R.string.salad15_description, 120.00))
+        itemList.add(Food(R.drawable.salad16, R.string.salad16_title, R.string.salad16_description, 120.00))
+    }
+
 }
