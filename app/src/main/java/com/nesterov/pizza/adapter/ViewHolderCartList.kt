@@ -19,6 +19,7 @@ class ViewHolderCartList(item: View): RecyclerView.ViewHolder(item) {
     val number: TextView = item.findViewById(R.id.numberItemTxt)
 
     fun bind(food: FoodCart, sumaCartListActivity: SumaCartListActivity){
+        image.setImageResource(food.image)
         title.text = food.title
         number.text = food.number.toString()
         money.text = food.money.toString()

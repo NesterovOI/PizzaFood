@@ -37,7 +37,10 @@ class SaladActivity : AppCompatActivity() {
         )
 
         itemList = ArrayList()
-        arrayListFood.rolesListFood(itemList)
+        arrayListFood.saladListFood(itemList)
+
+        itemAdapter = AdapterCategoriesList(itemList)
+        recyclerView.adapter = itemAdapter
 
         itemAdapter.itemClick = {
             val i = Intent(this@SaladActivity, SaladActivity::class.java)

@@ -31,13 +31,16 @@ class RolesActivity : AppCompatActivity() {
     }
     fun rolesRecyclerView() = with(binding){
 
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(
+        recyclerViewRoles.setHasFixedSize(true)
+        recyclerViewRoles.layoutManager = LinearLayoutManager(
             this@RolesActivity, LinearLayoutManager.VERTICAL, false
         )
 
         itemList = ArrayList()
         arrayListFood.rolesListFood(itemList)
+
+        itemAdapter = AdapterCategoriesList(itemList)
+        recyclerViewRoles.adapter = itemAdapter
 
         itemAdapter.itemClick = {
             val i = Intent(this@RolesActivity, RolesActivity::class.java)
