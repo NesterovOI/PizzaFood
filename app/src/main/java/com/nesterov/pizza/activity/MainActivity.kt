@@ -3,6 +3,7 @@ package com.nesterov.pizza.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.R
 import com.nesterov.pizza.adapter.AdapterCategories
@@ -12,6 +13,8 @@ import com.nesterov.pizza.bd.ManagementFood
 import com.nesterov.pizza.data.Categories
 import com.nesterov.pizza.data.Food
 import com.nesterov.pizza.databinding.ActivityMainBinding
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(){
 
@@ -22,6 +25,8 @@ class MainActivity : AppCompatActivity(){
 
     lateinit var itemListFood: ArrayList<Food>
     lateinit var itemAdapterPopularFood: AdapterPopularFood
+
+    lateinit var findItemList: ArrayList<Categories>
 
     val arrayListFood = ArrayListFood()
     val managementFood = ManagementFood()
@@ -49,11 +54,44 @@ class MainActivity : AppCompatActivity(){
             LinearLayoutManager.HORIZONTAL, false
         )
         itemList = ArrayList()
+        findItemList = ArrayList()
 
         arrayListFood.categoriesListFood(itemList)
 
-        itemAdapter = AdapterCategories(itemList)
+        findItemList.addAll(itemList)
+
+        itemAdapter = AdapterCategories(findItemList)
         idRecyclerViewCategories.adapter = itemAdapter
+
+            idFindEdit.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+                android.widget.SearchView.OnQueryTextListener {
+
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+
+                    if(newText!!.isNotEmpty()){
+                        findItemList.clear()
+                        val search = newText.toLowerCase(Locale.getDefault())
+
+                        itemList.forEach{
+                            if(it.title.toString().toLowerCase(Locale.getDefault()).contains(search)){
+                                findItemList.add(it)
+                            }
+                        }
+                        idRecyclerViewCategories.adapter!!.notifyDataSetChanged()
+                    }
+                    else{
+                        findItemList.clear()
+                        findItemList.addAll(itemList)
+                        idRecyclerViewCategories.adapter!!.notifyDataSetChanged()
+                    }
+                    return true
+                }
+
+            })
 
         itemAdapter.itemClick = {
             val i = Intent(this@MainActivity, MainActivity::class.java)
@@ -64,6 +102,7 @@ class MainActivity : AppCompatActivity(){
         val itemOnClick = intent.getParcelableExtra<Categories>("open")
 
         if (itemOnClick != null) {
+
             if (itemOnClick.image == R.drawable.cat_1){
                 val i = Intent(this@MainActivity, PizzaActivity::class.java)
                 startActivity(i)
