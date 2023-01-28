@@ -14,7 +14,7 @@ class ManagementFood {
         var money = 0.0
 
         for (index in food){
-            money += index.totalMoney
+          //  money += index.totalMoney
         }
 
         return money

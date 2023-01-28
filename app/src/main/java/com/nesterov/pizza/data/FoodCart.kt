@@ -9,7 +9,7 @@ data class FoodCart(
     var number: Int,
     var money: Double,
     var totalMoney: Double
-    ) : Parcelable {
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),

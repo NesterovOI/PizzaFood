@@ -58,7 +58,7 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
             val food = FoodCart(image, title, numberAdd, moneyAdd, totalMoneyAdd)
 
             adapterFood.addFoodDomain(food)
-          //  totalManyTxt.text = adapterFood.addFoodTotalMoney()
+            //  totalManyTxt.text = adapterFood.addFoodTotalMoney()
             cartRecyclerView.adapter = adapterFood
 
             adapterFood.itemClick = {
