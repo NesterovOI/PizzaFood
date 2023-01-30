@@ -35,7 +35,6 @@ class ManagementFood {
 
     fun initFind(findItemList: ArrayList<Food>, searchView: android.widget.SearchView, recyclerView: RecyclerView, itemList: ArrayList<Food>){
 
-        //findItemList = ArrayList()
         findItemList.addAll(itemList)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
@@ -61,7 +60,42 @@ class ManagementFood {
                     findItemList.addAll(itemList)
                     recyclerView.adapter!!.notifyDataSetChanged()
                 }
-                return false
+                return true
+            }
+
+        })
+
+    }
+
+    fun initFindCategories(findItemList: ArrayList<Categories>, searchView: android.widget.SearchView,
+                           recyclerView: RecyclerView, itemList: ArrayList<Categories>){
+
+        findItemList.addAll(itemList)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean = true
+
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                if (newText!!.isNotEmpty()){
+                    findItemList.clear()
+                    val search = newText.toLowerCase(Locale.getDefault())
+
+                    itemList.forEach {
+                        if (it.title.toString().toLowerCase(Locale.getDefault()).contains(search)){
+                            findItemList.add(it)
+                        }
+                    }
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                }
+                else{
+                    findItemList.clear()
+                    findItemList.addAll(itemList)
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                }
+                return true
             }
 
         })

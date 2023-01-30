@@ -40,7 +40,7 @@ class AdditionActivity : AppCompatActivity() {
         findItemList = ArrayList()
         arrayListFood.additionListFood(itemList)
 
-        itemAdapter = AdapterCategoriesList(itemList)
+        itemAdapter = AdapterCategoriesList(findItemList)
         recyclerView.adapter = itemAdapter
 
         managementFood.initFind(findItemList, idFindEdit, recyclerView, itemList)

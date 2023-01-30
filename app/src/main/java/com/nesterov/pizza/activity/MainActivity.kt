@@ -63,37 +63,7 @@ class MainActivity : AppCompatActivity(){
         itemAdapter = AdapterCategories(findItemList)
         idRecyclerViewCategories.adapter = itemAdapter
 
-        val searchView = idFindEdit
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-            android.widget.SearchView.OnQueryTextListener {
-
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    return false
-                }
-
-                override fun onQueryTextChange(newText: String?): Boolean {
-
-                    if(newText!!.isNotEmpty()){
-                        findItemList.clear()
-                        val search = newText.toLowerCase(Locale.getDefault())
-
-                        itemList.forEach{
-                            if(it.title.toString().toLowerCase(Locale.getDefault()).contains(search)){
-                                findItemList.add(it)
-                            }
-                        }
-                        idRecyclerViewCategories.adapter!!.notifyDataSetChanged()
-                    }
-                    else{
-                        findItemList.clear()
-                        findItemList.addAll(itemList)
-                        idRecyclerViewCategories.adapter!!.notifyDataSetChanged()
-                    }
-                    return false
-                }
-
-            })
+        managementFood.initFindCategories(findItemList, idFindEdit, idRecyclerViewCategories, itemList)
 
         itemAdapter.itemClick = {
             val i = Intent(this@MainActivity, MainActivity::class.java)
