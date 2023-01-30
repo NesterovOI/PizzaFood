@@ -15,6 +15,7 @@ class RolesActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityRolesBinding
     lateinit var itemList: ArrayList<Food>
+    lateinit var findItemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
 
     val arrayListFood = ArrayListFood()
@@ -37,10 +38,13 @@ class RolesActivity : AppCompatActivity() {
         )
 
         itemList = ArrayList()
+        findItemList = ArrayList()
         arrayListFood.rolesListFood(itemList)
 
-        itemAdapter = AdapterCategoriesList(itemList)
+        itemAdapter = AdapterCategoriesList(findItemList)
         recyclerViewRoles.adapter = itemAdapter
+
+        managementFood.initFind(findItemList, idFindEdit, recyclerViewRoles, itemList)
 
         itemAdapter.itemClick = {
             val i = Intent(this@RolesActivity, RolesActivity::class.java)
