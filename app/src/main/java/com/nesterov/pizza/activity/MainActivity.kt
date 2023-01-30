@@ -63,11 +63,13 @@ class MainActivity : AppCompatActivity(){
         itemAdapter = AdapterCategories(findItemList)
         idRecyclerViewCategories.adapter = itemAdapter
 
-            idFindEdit.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-                android.widget.SearchView.OnQueryTextListener {
+        val searchView = idFindEdit
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
-                    return true
+                    return false
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
@@ -88,7 +90,7 @@ class MainActivity : AppCompatActivity(){
                         findItemList.addAll(itemList)
                         idRecyclerViewCategories.adapter!!.notifyDataSetChanged()
                     }
-                    return true
+                    return false
                 }
 
             })

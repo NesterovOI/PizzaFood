@@ -7,14 +7,14 @@ import com.nesterov.pizza.data.Food
 class ArrayListFood {
 
     fun categoriesListFood(itemList: ArrayList<Categories>){
-        itemList.add(Categories(R.drawable.cat_1, R.drawable.category_backgrount, R.string.cat1))
-        itemList.add(Categories(R.drawable.cat_2, R.drawable.category_backgrount2, R.string.cat2))
-        itemList.add(Categories(R.drawable.cat_3, R.drawable.category_backgrount3, R.string.cat3))
-        itemList.add(Categories(R.drawable.cat_4, R.drawable.category_backgrount4, R.string.cat4))
-        itemList.add(Categories(R.drawable.cat_5, R.drawable.category_backgrount5, R.string.cat5))
-        itemList.add(Categories(R.drawable.cat_6, R.drawable.category_backgrount6, R.string.cat6))
-        itemList.add(Categories(R.drawable.cat_7, R.drawable.category_backgrount7, R.string.cat7))
-        itemList.add(Categories(R.drawable.cat_8, R.drawable.category_backgrount8, R.string.cat8))
+        itemList.add(Categories(R.drawable.cat_1, R.drawable.category_backgrount, "Піца"))
+        itemList.add(Categories(R.drawable.cat_2, R.drawable.category_backgrount2, "Роли"))
+        itemList.add(Categories(R.drawable.cat_3, R.drawable.category_backgrount3, "Сети"))
+        itemList.add(Categories(R.drawable.cat_4, R.drawable.category_backgrount4, "Салат"))
+        itemList.add(Categories(R.drawable.cat_5, R.drawable.category_backgrount5, "Суп"))
+        itemList.add(Categories(R.drawable.cat_6, R.drawable.category_backgrount6, "Соус"))
+        itemList.add(Categories(R.drawable.cat_7, R.drawable.category_backgrount7, "Десерт"))
+        itemList.add(Categories(R.drawable.cat_8, R.drawable.category_backgrount8, "Напій"))
     }
 
     fun popularListFood(itemList: ArrayList<Food>){

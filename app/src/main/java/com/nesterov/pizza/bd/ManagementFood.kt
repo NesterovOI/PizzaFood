@@ -32,12 +32,13 @@ class ManagementFood {
         context.startActivity(i)
     }
 
-    fun initFind(findItemList : ArrayList<Food>, searchView: SearchView, recyclerView: RecyclerView, itemList: ArrayList<Food>){
+    fun initFind(findItemList: ArrayList<Food>, searchView: android.widget.SearchView, recyclerView: RecyclerView, itemList: ArrayList<Food>){
 
-       // findItemList = ArrayList()
+        //findItemList = ArrayList()
         findItemList.addAll(itemList)
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean = true
 
             @SuppressLint("NotifyDataSetChanged")
