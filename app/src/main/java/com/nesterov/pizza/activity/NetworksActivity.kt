@@ -15,6 +15,7 @@ class NetworksActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityNetworksBinding
     lateinit var itemList: ArrayList<Food>
+    lateinit var findItemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
 
     val arrayListFood = ArrayListFood()
@@ -36,10 +37,13 @@ class NetworksActivity : AppCompatActivity() {
         )
 
         itemList = ArrayList()
+        findItemList = ArrayList()
         arrayListFood.networksListFood(itemList)
 
-        itemAdapter = AdapterCategoriesList(itemList)
+        itemAdapter = AdapterCategoriesList(findItemList)
         recyclerView.adapter = itemAdapter
+
+        managementFood.initFind(findItemList, idFindEdit, recyclerView, itemList)
 
         itemAdapter.itemClick = {
             val i = Intent(this@NetworksActivity, NetworksActivity::class.java)
