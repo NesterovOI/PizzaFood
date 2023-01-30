@@ -16,6 +16,7 @@ class PizzaActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityPizzaBinding
     lateinit var itemList: ArrayList<Food>
+    lateinit var findItemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
 
     val arrayListFood = ArrayListFood()
@@ -38,10 +39,13 @@ class PizzaActivity : AppCompatActivity() {
         )
 
         itemList = ArrayList()
+        findItemList = ArrayList()
         arrayListFood.pizzaListFood(itemList)
 
-        itemAdapter = AdapterCategoriesList(itemList)
+        itemAdapter = AdapterCategoriesList(findItemList)
         recyclerViewPizza.adapter = itemAdapter
+
+        managementFood.initFind(findItemList, idFindEdit, recyclerViewPizza, itemList)
 
         itemAdapter.itemClick = {
             val i = Intent(this@PizzaActivity, PizzaActivity::class.java)
