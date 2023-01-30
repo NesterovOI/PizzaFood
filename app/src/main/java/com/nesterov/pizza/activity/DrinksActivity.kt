@@ -15,6 +15,7 @@ class DrinksActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDrinksBinding
     lateinit var itemList: ArrayList<Food>
+    lateinit var findItemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
 
     val arrayListFood = ArrayListFood()
@@ -34,10 +35,13 @@ class DrinksActivity : AppCompatActivity() {
             this@DrinksActivity, LinearLayoutManager.VERTICAL, false
         )
         itemList = ArrayList()
+        findItemList = ArrayList()
         arrayListFood.drinksListFood(itemList)
 
-        itemAdapter = AdapterCategoriesList(itemList)
+        itemAdapter = AdapterCategoriesList(findItemList)
         recyclerView.adapter = itemAdapter
+
+        managementFood.initFind(findItemList, idFindEdit, recyclerView, itemList)
 
         itemAdapter.itemClick = {
             val i = Intent(this@DrinksActivity, DrinksActivity::class.java)
