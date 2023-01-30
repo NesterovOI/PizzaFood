@@ -7,6 +7,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.activity.ShowDetailActivity
 import com.nesterov.pizza.constants.Constants
+import com.nesterov.pizza.data.Categories
 import com.nesterov.pizza.data.Food
 import com.nesterov.pizza.data.FoodCart
 import java.util.Locale
@@ -60,7 +61,7 @@ class ManagementFood {
                     findItemList.addAll(itemList)
                     recyclerView.adapter!!.notifyDataSetChanged()
                 }
-                return true
+                return false
             }
 
         })
