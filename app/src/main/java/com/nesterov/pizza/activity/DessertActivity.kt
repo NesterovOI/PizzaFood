@@ -16,6 +16,7 @@ class DessertActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDessertBinding
     lateinit var itemList: ArrayList<Food>
+    lateinit var findItemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
 
     val arrayListFood = ArrayListFood()
@@ -37,10 +38,13 @@ class DessertActivity : AppCompatActivity() {
         )
 
         itemList = ArrayList()
+        findItemList = ArrayList()
         arrayListFood.dessertListFood(itemList)
 
-        itemAdapter = AdapterCategoriesList(itemList)
+        itemAdapter = AdapterCategoriesList(findItemList)
         recyclerView.adapter = itemAdapter
+
+        managementFood.initFind(findItemList, idFindEdit, recyclerView, itemList)
 
         itemAdapter.itemClick = {
             val i = Intent(this@DessertActivity, DessertActivity::class.java)
