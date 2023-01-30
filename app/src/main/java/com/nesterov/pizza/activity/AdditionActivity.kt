@@ -17,6 +17,8 @@ class AdditionActivity : AppCompatActivity() {
     lateinit var itemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
 
+
+
     val arrayListFood = ArrayListFood()
     val managementFood = ManagementFood()
 

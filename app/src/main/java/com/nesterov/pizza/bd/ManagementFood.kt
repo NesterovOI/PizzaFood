@@ -1,13 +1,19 @@
 package com.nesterov.pizza.bd
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.activity.ShowDetailActivity
 import com.nesterov.pizza.constants.Constants
 import com.nesterov.pizza.data.Food
 import com.nesterov.pizza.data.FoodCart
+import java.util.Locale
 
 class ManagementFood {
+
+   // private lateinit var findItemList: ArrayList<Food>
 
     fun totalMoneyFood(food: ArrayList<FoodCart>): Double{
 
@@ -24,6 +30,40 @@ class ManagementFood {
         val i = Intent(context, ShowDetailActivity::class.java)
         i.putExtra(Constants.ITEM_LIST_POPULAR_FOOD, itemList[index])
         context.startActivity(i)
+    }
+
+    fun initFind(findItemList : ArrayList<Food>, searchView: SearchView, recyclerView: RecyclerView, itemList: ArrayList<Food>){
+
+       // findItemList = ArrayList()
+        findItemList.addAll(itemList)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean = true
+
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                if (newText!!.isNotEmpty()){
+                    findItemList.clear()
+                    val search = newText.toLowerCase(Locale.getDefault())
+
+                    itemList.forEach {
+                        if (it.title.toString().toLowerCase(Locale.getDefault()).contains(search)){
+                            findItemList.add(it)
+                        }
+                    }
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                }
+                else{
+                    findItemList.clear()
+                    findItemList.addAll(itemList)
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                }
+                return true
+            }
+
+        })
+
     }
 
 }
