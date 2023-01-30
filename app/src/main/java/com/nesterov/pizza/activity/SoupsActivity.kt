@@ -15,6 +15,7 @@ class SoupsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivitySoupsBinding
     lateinit var itemList: ArrayList<Food>
+    lateinit var findItemList: ArrayList<Food>
     lateinit var itemAdapter: AdapterCategoriesList
 
     val arrayListFood = ArrayListFood()
@@ -36,10 +37,13 @@ class SoupsActivity : AppCompatActivity() {
         )
 
         itemList = ArrayList()
+        findItemList = ArrayList()
         arrayListFood.soupsListFood(itemList)
 
-        itemAdapter = AdapterCategoriesList(itemList)
+        itemAdapter = AdapterCategoriesList(findItemList)
         recyclerView.adapter = itemAdapter
+
+        managementFood.initFind(findItemList, idFindEdit, recyclerView, itemList)
 
         itemAdapter.itemClick = {
             val i = Intent(this@SoupsActivity, SoupsActivity::class.java)
