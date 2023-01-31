@@ -2,15 +2,27 @@ package com.nesterov.pizza.data
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity (tableName = "foodCart")
 data class FoodCart(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null,
+    @ColumnInfo(name = "image")
     var image: Int,
+    @ColumnInfo(name = "title")
     var title: String?,
+    @ColumnInfo(name = "number")
     var number: Int,
+    @ColumnInfo(name = "money")
     var money: Double,
+    @ColumnInfo(name = "totalMoney")
     var totalMoney: Double
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readInt(),
         parcel.readInt(),
         parcel.readString(),
         parcel.readInt(),
@@ -20,6 +32,7 @@ data class FoodCart(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id!!)
         parcel.writeInt(image)
         parcel.writeString(title)
         parcel.writeInt(number)
