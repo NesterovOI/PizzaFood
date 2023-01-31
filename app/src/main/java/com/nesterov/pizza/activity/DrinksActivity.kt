@@ -28,6 +28,12 @@ class DrinksActivity : AppCompatActivity() {
 
         drinksRecyclerView()
 
+        binding.homeBtn.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
     }
     fun drinksRecyclerView() = with(binding){
         recyclerView.setHasFixedSize(true)

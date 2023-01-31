@@ -29,6 +29,12 @@ class PizzaActivity : AppCompatActivity() {
 
         recyclerViewPizza()
 
+        binding.homeBtn.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
     }
 
     fun recyclerViewPizza() = with(binding){

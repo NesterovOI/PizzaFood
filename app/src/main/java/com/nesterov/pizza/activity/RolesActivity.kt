@@ -29,6 +29,12 @@ class RolesActivity : AppCompatActivity() {
 
         rolesRecyclerView()
 
+        binding.homeBtn.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
     }
     fun rolesRecyclerView() = with(binding){
 

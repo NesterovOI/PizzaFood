@@ -28,6 +28,12 @@ class SoupsActivity : AppCompatActivity() {
 
         soupsRecyclerView()
 
+        binding.homeBtn.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
     }
     fun soupsRecyclerView() = with(binding){
 

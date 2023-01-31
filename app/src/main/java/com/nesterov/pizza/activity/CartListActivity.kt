@@ -115,10 +115,7 @@ class CartListActivity : AppCompatActivity(), SumaCartListActivity {
                 val res  = totalManySum + tax
                 totalManyTxt.text = res.toString()
             }
-
         }
-
-
         return sum.toString()
     }
 }

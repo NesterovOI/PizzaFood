@@ -28,6 +28,12 @@ class NetworksActivity : AppCompatActivity() {
 
         networksRecyclerView()
 
+        binding.homeBtn.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
     }
     fun networksRecyclerView() = with(binding){
 

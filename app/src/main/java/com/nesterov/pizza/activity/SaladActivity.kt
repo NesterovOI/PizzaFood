@@ -29,6 +29,12 @@ class SaladActivity : AppCompatActivity() {
 
         saladRecyclerView()
 
+        binding.homeBtn.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
     }
     fun saladRecyclerView() = with(binding) {
 

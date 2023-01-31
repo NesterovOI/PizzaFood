@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
+import com.nesterov.pizza.activity.MainActivity
 import com.nesterov.pizza.activity.ShowDetailActivity
 import com.nesterov.pizza.constants.Constants
 import com.nesterov.pizza.data.Categories

@@ -29,6 +29,12 @@ class DessertActivity : AppCompatActivity() {
 
         recyclerViewDessert()
 
+        binding.homeBtn.setOnClickListener{
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }
+
     }
 
     fun recyclerViewDessert() = with(binding) {
