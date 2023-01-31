@@ -12,6 +12,7 @@ class ShowDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityShowDetailBinding
     var numberProduct = 1
     private var sum = 0.0
+    private var imageIntent: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class ShowDetailActivity : AppCompatActivity() {
                 titleTxt.setText(food.title)
                 priceTxt.text = food.money.toString()
                 imageFood.setImageResource(food.image)
+                imageIntent = food.image
                 descriptionTxt.setText(food.description)
                 totalMoney.text = food.money.toString()
             }
@@ -62,15 +64,13 @@ class ShowDetailActivity : AppCompatActivity() {
 
     fun cleave() = with(binding) {
         addToCartBtn.setOnClickListener {
-
-            val image = imageFood.id
             val title: String = titleTxt.text.toString()
             val number: String = numberOrderTxt.text.toString()
             val money: String = priceTxt.text.toString()
             val totalMoney: String = totalMoney.text.toString()
 
             val i = Intent(this@ShowDetailActivity, CartListActivity::class.java)
-            i.putExtra(Constants.IMAGE_FOOD, image)
+            i.putExtra(Constants.IMAGE_FOOD, imageIntent)
             i.putExtra(Constants.TITLE_FOOD, title)
             i.putExtra(Constants.NUMBER_FOOD, number)
             i.putExtra(Constants.MONEY_FOOD, money)
