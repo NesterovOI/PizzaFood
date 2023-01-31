@@ -8,5 +8,4 @@ object Constants {
     val NUMBER_FOOD = "number"
     val MONEY_FOOD = "food"
     val TOTAL_MONEY = "total_money"
-    val SHARED_PREFERENCES = "shared_preferences"
 }
