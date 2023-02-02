@@ -9,14 +9,24 @@ import com.nesterov.pizza.data.FoodCart
 @Database(entities = [FoodCart::class], version = 1)
 abstract class MainBD: RoomDatabase()  {
 
+    abstract fun getFoodCartDao(): Dao
+
     companion object{
-        fun getDB(context: Context):MainBD{
-            return Room.databaseBuilder(
-                context.applicationContext,
-                MainBD::class.java,
-                "food.db"
-            ).build()
+        @Volatile
+        private var instance: MainBD? = null
+        private val LOCK =  Any()
+
+        operator fun invoke(context: Context) = instance ?: synchronized(LOCK){
+            instance ?: buildDataBase(context).also {
+                instance = it
+            }
         }
+
+        private fun buildDataBase(context: Context) = Room.databaseBuilder(
+            context.applicationContext,
+            MainBD::class.java,
+            "app-database"
+        ).build()
     }
 
 }

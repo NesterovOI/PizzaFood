@@ -3,9 +3,13 @@ package com.nesterov.pizza.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
+import com.nesterov.pizza.bd.MainBD
 import com.nesterov.pizza.constants.Constants
 import com.nesterov.pizza.data.Food
+import com.nesterov.pizza.data.FoodCart
 import com.nesterov.pizza.databinding.ActivityShowDetailBinding
+import kotlinx.coroutines.launch
 
 class ShowDetailActivity : AppCompatActivity() {
 
@@ -18,7 +22,6 @@ class ShowDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityShowDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         val food = intent.getParcelableExtra<Food>(Constants.ITEM_LIST_POPULAR_FOOD)
 
@@ -69,14 +72,15 @@ class ShowDetailActivity : AppCompatActivity() {
             val money: String = priceTxt.text.toString()
             val totalMoney: String = totalMoney.text.toString()
 
+            lifecycleScope.launch{
+                val foodCart = FoodCart(imageIntent, title, number.toInt(), money.toDouble(), totalMoney.toDouble())
+                MainBD(this@ShowDetailActivity).getFoodCartDao().addFoodCart(foodCart)
+                finish()
+            }
+
             val i = Intent(this@ShowDetailActivity, CartListActivity::class.java)
-            i.putExtra(Constants.IMAGE_FOOD, imageIntent)
-            i.putExtra(Constants.TITLE_FOOD, title)
-            i.putExtra(Constants.NUMBER_FOOD, number)
-            i.putExtra(Constants.MONEY_FOOD, money)
-            i.putExtra(Constants.TOTAL_MONEY, totalMoney)
-            startActivity(i)
-            finish()
+             startActivity(i)
+             finish()
         }
     }
 
