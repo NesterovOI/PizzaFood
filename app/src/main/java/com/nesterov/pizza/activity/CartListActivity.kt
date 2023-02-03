@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isEmpty
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.adapter.AdapterCartList
 import com.nesterov.pizza.bd.MainBD
+import com.nesterov.pizza.bd.ManagementFood
 import com.nesterov.pizza.data.FoodCart
 import com.nesterov.pizza.databinding.ActivityCartListBinding
 import kotlinx.coroutines.launch
@@ -19,10 +21,9 @@ class CartListActivity : AppCompatActivity() {
     lateinit var binding: ActivityCartListBinding
     private var mAdapter: AdapterCartList? = null
 
-    val tax = 100
-    var numberAdd = 0
-    var moneyAdd: Double = 0.0
-    var totalMoneyAdd: Double = 0.0
+    private val tax = 100
+    private var moneyAdd: Double = 0.0
+    val managementFood = ManagementFood()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,10 +43,13 @@ class CartListActivity : AppCompatActivity() {
             deliveryCheckBox.setOnClickListener {
                 checkBox()
             }
+
+            //empty()
+
         }
     }
 
-    fun checkBox() = with(binding) {
+    private fun checkBox() = with(binding) {
         if (deliveryCheckBox.isChecked) {
             taxi.visibility = View.VISIBLE
             taxManyTxt.text = tax.toString()
@@ -59,9 +63,9 @@ class CartListActivity : AppCompatActivity() {
         }
     }
 
-    fun empty() = with(binding) {
-        val sum: String = totalManyTxt.text.toString()
-        if (sum == "0.0") {
+    private fun empty() = with(binding) {
+        //val sum: String = totalManyTxt.text.toString()
+        if (cartRecyclerView.isEmpty()) {
             scrollView.visibility = View.GONE
             emptyTxt.visibility = View.VISIBLE
         } else {
@@ -69,40 +73,37 @@ class CartListActivity : AppCompatActivity() {
             emptyTxt.visibility = View.GONE
         }
     }
-//
-//    override fun addFoodTotalMoney(sum: Double): String {
-//        binding.apply {
-//            allFoodTxt.text = sum.toString()
-//            totalManyTxt.text = sum.toString()
-//            val totalManySum: Double = totalManyTxt.text.toString().toDouble()
-//
-//            // функція для знищення стрроки в скиску removeAt()
-//
-//            if (deliveryCheckBox.isChecked){
-//                val res  = totalManySum + tax
-//                totalManyTxt.text = res.toString()
-//            }
-//        }
-//        return sum.toString()
-//    }
 
     private fun setAdapter(list: List<FoodCart>) {
         mAdapter?.setData(list)
     }
 
-    fun openRecyclerView() {
+    private fun openRecyclerView() = with(binding) {
         lifecycleScope.launch {
             val foodCartList = MainBD(this@CartListActivity)
                 .getFoodCartDao()
                 .getAllFoodCart()
 
+            moneyAdd =  managementFood.totalMoneyFood(foodCartList, allFoodTxt, totalManyTxt)
+
             mAdapter = AdapterCartList()
 
-            binding.cartRecyclerView.apply {
+            cartRecyclerView.apply {
                 layoutManager = LinearLayoutManager(this@CartListActivity)
                 adapter = mAdapter
 
                 setAdapter(foodCartList)
+
+                mAdapter?.setOnActionUpdateListener {
+                    lifecycleScope.launch {
+
+                        val list = MainBD(this@CartListActivity)
+                            .getFoodCartDao()
+                            .getAllFoodCart()
+                        MainBD(this@CartListActivity).getFoodCartDao().updateFoodCart(it)
+                        setAdapter(list)
+                    }
+                }
 
                 mAdapter?.setOnActionDeleteListener {
                     val builder = AlertDialog.Builder(this@CartListActivity)

@@ -10,6 +10,8 @@ class AdapterCartList: RecyclerView.Adapter<ViewHolderCartList>() {
 
     private val list = mutableListOf<FoodCart>()
     private var actionDelete: ((FoodCart) -> Unit)? = null
+    private var actionUpdate: ((FoodCart) -> Unit)? = null
+
 
     var sum: Double = 0.0
 
@@ -29,15 +31,19 @@ class AdapterCartList: RecyclerView.Adapter<ViewHolderCartList>() {
         holder.totalMoney.text = foodCart.totalMoney.toString()
 
         holder.plusCartBtn.setOnClickListener {
+
             val many = holder.money.text.toString().toDouble()
             var number = holder.number.text.toString().toInt()
+            val s = number
             number++
             sum = (many * number)
             holder.number.text = number.toString()
             holder.totalMoney.text = sum.toString()
+
         }
 
         holder.minusCartBtn.setOnClickListener {
+
             val many = holder.money.text.toString().toDouble()
             val manyTotal = holder.totalMoney.text.toString().toDouble()
             var number = holder.number.text.toString().toInt()
@@ -50,6 +56,7 @@ class AdapterCartList: RecyclerView.Adapter<ViewHolderCartList>() {
                 if (number == 0) {
                     actionDelete?.invoke(foodCart)
                 }
+
             }
 
     }
@@ -62,6 +69,10 @@ class AdapterCartList: RecyclerView.Adapter<ViewHolderCartList>() {
             addAll(foodCart)
         }
         notifyDataSetChanged()
+    }
+
+    fun setOnActionUpdateListener(callback: ((FoodCart) -> Unit)){
+        this.actionUpdate = callback
     }
 
     fun setOnActionDeleteListener(callback: ((FoodCart) -> Unit)){

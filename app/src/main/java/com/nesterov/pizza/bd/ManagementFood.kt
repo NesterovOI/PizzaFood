@@ -3,6 +3,7 @@ package com.nesterov.pizza.bd
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
 import com.nesterov.pizza.activity.ShowDetailActivity
@@ -14,16 +15,15 @@ import java.util.Locale
 
 class ManagementFood {
 
-   // private lateinit var findItemList: ArrayList<Food>
-
-    fun totalMoneyFood(food: ArrayList<FoodCart>): Double{
+    fun totalMoneyFood(food: List<FoodCart>, allFoodTxt: TextView, totalManyTxt: TextView): Double{
 
         var money = 0.0
 
-        for (index in food){
-          //  money += index.totalMoney
+        food.forEach { index ->
+            money += index.totalMoney
         }
-
+        allFoodTxt.text = money.toString()
+        totalManyTxt.text = money.toString()
         return money
     }
 
