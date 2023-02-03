@@ -65,7 +65,7 @@ class ShowDetailActivity : AppCompatActivity() {
         }
     }
 
-    fun cleave() = with(binding) {
+    private fun cleave() = with(binding) {
         addToCartBtn.setOnClickListener {
             val title: String = titleTxt.text.toString()
             val number: String = numberOrderTxt.text.toString()
