@@ -34,7 +34,11 @@ class AdapterCartList: RecyclerView.Adapter<ViewHolderCartList>() {
 
             val many = holder.money.text.toString().toDouble()
             var numberSum = holder.number.text.toString().toInt()
+            val plus: Int = numberSum
             numberSum++
+            if (plus < numberSum){
+                actionUpdate?.invoke(foodCart)
+            }
             sum = (many * numberSum)
             holder.number.text = numberSum.toString()
             holder.totalMoney.text = sum.toString()
@@ -46,8 +50,11 @@ class AdapterCartList: RecyclerView.Adapter<ViewHolderCartList>() {
             val many = holder.money.text.toString().toDouble()
             val manyTotal = holder.totalMoney.text.toString().toDouble()
             var numberSum = holder.number.text.toString().toInt()
-
+            val plus: Int = numberSum
             numberSum--
+            if (plus > numberSum){
+                actionUpdate?.invoke(foodCart)
+            }
                 holder.number.text = numberSum.toString()
                 sum = manyTotal - many
                 holder.totalMoney.text = sum.toString()

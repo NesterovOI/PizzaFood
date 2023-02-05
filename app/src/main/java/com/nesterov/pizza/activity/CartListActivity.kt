@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isEmpty
+import androidx.core.view.isNotEmpty
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.adapter.AdapterCartList
@@ -44,7 +45,7 @@ class CartListActivity : AppCompatActivity() {
                 checkBox()
             }
 
-            //empty()
+            empty()
 
         }
     }
@@ -64,8 +65,7 @@ class CartListActivity : AppCompatActivity() {
     }
 
     private fun empty() = with(binding) {
-        //val sum: String = totalManyTxt.text.toString()
-        if (cartRecyclerView.isEmpty()) {
+        if (cartRecyclerView.isNotEmpty()) {
             scrollView.visibility = View.GONE
             emptyTxt.visibility = View.VISIBLE
         } else {
@@ -97,11 +97,7 @@ class CartListActivity : AppCompatActivity() {
                 mAdapter?.setOnActionUpdateListener {
                     lifecycleScope.launch {
 
-                        val list = MainBD(this@CartListActivity)
-                            .getFoodCartDao()
-                            .getAllFoodCart()
                         MainBD(this@CartListActivity).getFoodCartDao().updateFoodCart(it)
-                        setAdapter(list)
                     }
                 }
 
