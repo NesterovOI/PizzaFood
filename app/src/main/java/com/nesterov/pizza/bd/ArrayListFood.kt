@@ -18,10 +18,10 @@ class ArrayListFood {
     }
 
     fun popularListFood(itemList: ArrayList<Food>){
-        itemList.add(Food(R.drawable.pop_1, "Піца 4 м\'яса — 450 г", R.string.dessert1_description, 199.00))
-        itemList.add(Food(R.drawable.cat_2, "Авокадо ролл — 210 г 8 шт", R.string.dessert2_description, 210.00))
-        itemList.add(Food(R.drawable.pop_3, "Піца 4 сира — 440 г", R.string.dessert3_description, 180.00))
-        itemList.add(Food(R.drawable.cat_4, "Курячі стріпси — 140 г", R.string.salad11_description, 150.00)
+        itemList.add(Food(R.drawable.pop_1, "Піца 4 м\'яса — 450 г", R.string.pizza1_description, 199.00))
+        itemList.add(Food(R.drawable.roles21, "Філадельфія Гурман — 260 г 8 шт", R.string.roles21_description, 210.00))
+        itemList.add(Food(R.drawable.pop_3, "Піца 4 сира — 440 г", R.string.pizza3_description, 180.00))
+        itemList.add(Food(R.drawable.cat_4, "Курячі стріпси — 140 г", R.string.salad5_description, 150.00)
         )
     }
 

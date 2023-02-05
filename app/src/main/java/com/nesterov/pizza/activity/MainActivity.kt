@@ -137,7 +137,7 @@ class MainActivity : AppCompatActivity(){
             if (itemOnClick.image == R.drawable.pop_1){
                 managementFood.intentItemList(this@MainActivity,0, itemListFood)
             } else
-            if (itemOnClick.image == R.drawable.cat_2){
+            if (itemOnClick.image == R.drawable.roles21){
                 managementFood.intentItemList(this@MainActivity,1, itemListFood)
             } else
             if (itemOnClick.image == R.drawable.pop_3){
