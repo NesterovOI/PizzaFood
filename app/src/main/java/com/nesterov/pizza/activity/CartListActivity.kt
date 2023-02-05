@@ -1,11 +1,12 @@
 package com.nesterov.pizza.activity
 
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.isEmpty
 import androidx.core.view.isNotEmpty
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,8 +24,12 @@ class CartListActivity : AppCompatActivity() {
     private var mAdapter: AdapterCartList? = null
 
     private val tax = 100
+    private var taxIntent = ""
     private var moneyAdd: Double = 0.0
     val managementFood = ManagementFood()
+    private val addresses: List<String> = listOf("nesterov_ai@ukr.net")
+    private val subject: String = "Прийміть замовлення"
+    lateinit var attachment: ArrayList<FoodCart>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +48,10 @@ class CartListActivity : AppCompatActivity() {
 
             deliveryCheckBox.setOnClickListener {
                 checkBox()
+            }
+
+            buttonOrder.setOnClickListener {
+                composeEmail(this@CartListActivity, addresses, subject, attachment)
             }
 
             empty()
@@ -84,7 +93,9 @@ class CartListActivity : AppCompatActivity() {
                 .getFoodCartDao()
                 .getAllFoodCart()
 
-            moneyAdd =  managementFood.totalMoneyFood(foodCartList, allFoodTxt, totalManyTxt)
+            attachment = foodCartList as ArrayList<FoodCart>
+
+            moneyAdd = managementFood.totalMoneyFood(foodCartList, allFoodTxt, totalManyTxt)
 
             mAdapter = AdapterCartList()
 
@@ -125,4 +136,41 @@ class CartListActivity : AppCompatActivity() {
         }
     }
 
+    fun composeEmail(
+        context: Context,
+        addresses: List<String>,
+        subject: String,
+        food: List<FoodCart>
+    ) = with(binding) {
+        val intent = Intent(Intent.ACTION_SEND)
+        val fullSum = moneyAdd + tax
+            if (binding.deliveryCheckBox.isChecked){
+                taxIntent = "Потрібна доставка продуктів $tax грн"
+            }
+
+        intent.type = "*/*"
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses.toTypedArray())
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+
+        var titleExtra = ""
+        var numberExtra = 0
+        var sumExtra = 0.0
+        food.forEach{
+            titleExtra = it.title.toString()
+            numberExtra = it.number
+            sumExtra = it.totalMoney
+            val foodExtra = "$titleExtra + $numberExtra кількість = $sumExtra грн."
+            textExtra.append(foodExtra)
+            textExtra.append("\n")
+        }
+        textExtra.append(taxIntent)
+        textExtra.append("\n")
+        textExtra.append("Загальна сума до сплати становить $fullSum грн.")
+
+        intent.putExtra(Intent.EXTRA_TEXT, textExtra.text)
+
+        context.startActivity(Intent.createChooser(intent, ""))
+    }
+
 }
+
