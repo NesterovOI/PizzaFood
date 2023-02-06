@@ -144,11 +144,11 @@ class CartListActivity : AppCompatActivity() {
     ) = with(binding) {
         val intent = Intent(Intent.ACTION_SEND)
         val fullSum = moneyAdd + tax
-            if (binding.deliveryCheckBox.isChecked){
+            if (deliveryCheckBox.isChecked){
                 taxIntent = "Потрібна доставка продуктів $tax грн"
             }
 
-        intent.type = "*/*"
+        intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_EMAIL, addresses.toTypedArray())
         intent.putExtra(Intent.EXTRA_SUBJECT, subject)
 
