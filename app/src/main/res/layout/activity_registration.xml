@@ -85,7 +85,6 @@
         android:hint="@string/hint_phone"
         android:inputType="phone"
         android:maxLength="9"
-        android:text="111111111"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"

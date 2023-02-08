@@ -15,20 +15,40 @@ class Registration : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.startButton.setOnClickListener{
-           numberPhone()
+        binding.apply {
+
+            val phone = getPhone()
+           editPhone.setText(phone)
+
+            startButton.setOnClickListener{
+                numberPhone()
+            }
         }
 
     }
-    private fun numberPhone(){
-        if (binding.editPhone.text.isEmpty()){
-            Toast.makeText(this, "Ведіть номер телефону для регістрації", Toast.LENGTH_LONG).show()
-        }else if(binding.editPhone.length() != 9){
-            Toast.makeText(this, "Не вірно веддений номер телефона", Toast.LENGTH_LONG).show()
+    private fun numberPhone() = with(binding){
+        if (editPhone.text.isEmpty()){
+            Toast.makeText(this@Registration, "Ведіть номер телефону", Toast.LENGTH_LONG).show()
+        }else if(editPhone.length() != 9){
+            Toast.makeText(this@Registration, "Не вірно веддений номер телефона", Toast.LENGTH_LONG).show()
         }else{
-            val i = Intent(this, MainActivity::class.java)
+            val i = Intent(this@Registration, MainActivity::class.java)
             startActivity(i)
+            savePhone(editPhone.text.toString())
             finish()
         }
     }
+
+    private fun savePhone(phone: String){
+        val sharePref = getSharedPreferences("myPhone", MODE_PRIVATE)
+        val editor = sharePref.edit()
+        editor.putString("key_phone", phone)
+        editor.commit()
+    }
+
+    fun getPhone(): String {
+        val sharePref = getSharedPreferences("myPhone", MODE_PRIVATE)
+        return sharePref.getString("key_phone", "")!!
+    }
+
 }

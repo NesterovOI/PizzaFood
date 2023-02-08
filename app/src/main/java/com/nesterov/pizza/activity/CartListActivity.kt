@@ -159,6 +159,9 @@ class CartListActivity : AppCompatActivity() {
             titleExtra = it.title.toString()
             numberExtra = it.number
             sumExtra = it.totalMoney
+            val phone = getPhone()
+            textExtra.append("Номер телефона 80$phone")
+            textExtra.append("\n")
             val foodExtra = "$titleExtra + $numberExtra кількість = $sumExtra грн."
             textExtra.append(foodExtra)
             textExtra.append("\n")
@@ -169,7 +172,12 @@ class CartListActivity : AppCompatActivity() {
 
         intent.putExtra(Intent.EXTRA_TEXT, textExtra.text)
 
-        context.startActivity(Intent.createChooser(intent, ""))
+        context.startActivity(Intent.createChooser(intent, "hsgjbgdlbgdglknglk"))
+    }
+
+    private fun getPhone(): String {
+        val sharePref = getSharedPreferences("myPhone", MODE_PRIVATE)
+        return sharePref.getString("key_phone", "")!!
     }
 
 }
