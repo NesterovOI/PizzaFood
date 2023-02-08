@@ -2,12 +2,13 @@ package com.nesterov.pizza.activity
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isNotEmpty
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nesterov.pizza.adapter.AdapterCartList
@@ -21,9 +22,10 @@ import kotlinx.coroutines.launch
 class CartListActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityCartListBinding
+    private lateinit var viewModel: CartListViewModel
     private var mAdapter: AdapterCartList? = null
 
-    private val tax = 100
+    private var tax = 100
     private var taxIntent = ""
     private var moneyAdd: Double = 0.0
     val managementFood = ManagementFood()
@@ -31,11 +33,23 @@ class CartListActivity : AppCompatActivity() {
     private val subject: String = "Прийміть замовлення"
     lateinit var attachment: ArrayList<FoodCart>
 
+    private lateinit var fullSum: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCartListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel = ViewModelProvider(this).get(CartListViewModel::class.java)
+
+        fullSum = ""
+        binding.taxManyTxt.text = tax.toString()
+        moneyAdd = binding.totalManyTxt.text.toString().toDouble()
+
+        viewModel.resultLive.observe(this@CartListActivity,  {
+            binding.totalManyTxt.text = it
+        })
 
         openRecyclerView()
 
@@ -62,14 +76,10 @@ class CartListActivity : AppCompatActivity() {
     private fun checkBox() = with(binding) {
         if (deliveryCheckBox.isChecked) {
             taxi.visibility = View.VISIBLE
-            taxManyTxt.text = tax.toString()
-            val moneyTaxi =
-                totalManyTxt.text.toString().toDouble() + taxManyTxt.text.toString().toDouble()
-            totalManyTxt.text = moneyTaxi.toString()
+             fullSum = viewModel.saveFullSum(moneyAdd, tax).toString()
         } else {
             taxi.visibility = View.GONE
-            val moneyTaxi = totalManyTxt.text.toString().toDouble() - tax
-            totalManyTxt.text = moneyTaxi.toString()
+             fullSum = viewModel.saveFullMinusSum(moneyAdd, tax).toString()
         }
     }
 
@@ -136,17 +146,17 @@ class CartListActivity : AppCompatActivity() {
         }
     }
 
-    fun composeEmail(
+    private fun composeEmail(
         context: Context,
         addresses: List<String>,
         subject: String,
         food: List<FoodCart>
     ) = with(binding) {
         val intent = Intent(Intent.ACTION_SEND)
-        val fullSum = moneyAdd + tax
-            if (deliveryCheckBox.isChecked){
-                taxIntent = "Потрібна доставка продуктів $tax грн"
-            }
+
+        if (deliveryCheckBox.isChecked) {
+            taxIntent = "Потрібна доставка продуктів $tax грн"
+        }
 
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_EMAIL, addresses.toTypedArray())
@@ -155,24 +165,26 @@ class CartListActivity : AppCompatActivity() {
         var titleExtra = ""
         var numberExtra = 0
         var sumExtra = 0.0
-        food.forEach{
+
+        val phone = getPhone()
+        textExtra.append("Номер телефона 80$phone")
+        textExtra.append("\n")
+
+        food.forEach {
             titleExtra = it.title.toString()
             numberExtra = it.number
             sumExtra = it.totalMoney
-            val phone = getPhone()
-            textExtra.append("Номер телефона 80$phone")
-            textExtra.append("\n")
             val foodExtra = "$titleExtra + $numberExtra кількість = $sumExtra грн."
             textExtra.append(foodExtra)
             textExtra.append("\n")
         }
         textExtra.append(taxIntent)
         textExtra.append("\n")
-        textExtra.append("Загальна сума до сплати становить $fullSum грн.")
+        textExtra.append("Загальна сума до сплати становить " + fullSum + "грн.")
 
         intent.putExtra(Intent.EXTRA_TEXT, textExtra.text)
 
-        context.startActivity(Intent.createChooser(intent, "hsgjbgdlbgdglknglk"))
+        context.startActivity(Intent.createChooser(intent, ""))
     }
 
     private fun getPhone(): String {
